@@ -1,3 +1,91 @@
 page-about {
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  /*input输入框*/
+  .ion-cur3{
+    width: 90%;
+    border:1px solid #e2e2e2;
+    height: 40px;
+    font-size: 16px;
+    padding: 3px;
+    margin: 10px auto;
+    border-radius:6px;
+  }
+  .ion-cur3 input,.ion-te .button input{
+    height: 30px;
+    border:none;
+  }
+  .ion-cur3 input{
+    width: 80%;
+  }
+  button{
+    color: white;
+  }
+  /*短信验证*/
+  .ion-te{
+    width: 90%;
+    height: 40px;
+    font-size: 16px;
+    padding: 3px;
+    margin: 10px auto;
+  }
+  .ion-te .button{
+    float: left;
+    height: 38px;
+    border:1px solid #e2e2e2;
+    border-radius: 8px;
+  }
+  .ion-te button{
+    float: right;
+    height: 38px;
+    border:1px solid #e2e2e2;
+    border-radius: 8px;
+  }
+  /*注册 找回按钮*/
+  .login-option{
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+  }
+  .login-option .register{
+    float: right;
+    color: gray;
+    border-bottom:1px solid gray;
+  }
+  .login-option .find{
+    float: left;
+    color: gray;
+    border-bottom:1px solid gray;
+  }
 
+  /*分类*/
+  .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+    background-color: #fe6c6c;
+    color: white;
+  }
+  .segment-ios .segment-button.segment-activated {
+    background-color: #fe6c6c;
+  }
+  .segment-ios .segment-button{
+    border-color: #fe6c6c;
+    color: black;
+  }
+    .segment-md{
+    height: 34px;
+    border-radius:6px;
+    border:1px solid #fe6c6c ;
+    padding: 1px;
+  }
+  .segment-md .segment-button{
+    border-style:none;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    color: black;
+  }
+  .item-md.item-block .item-inner{
+    border-bottom:none;
+  }
 }
