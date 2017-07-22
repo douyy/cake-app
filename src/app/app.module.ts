@@ -59,8 +59,7 @@ import {LinkmanPage} from "../pages/mycake/longing/linkman/linkman";
     ChangePage,
     ChangepassPage,
     AdressPage,
-    LinkmanPage
-
+    LinkmanPage,
   ],
   providers: [
     StatusBar,
