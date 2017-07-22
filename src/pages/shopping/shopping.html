@@ -1,11 +1,44 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About啦啦啦
+      空购物车
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="gwc">
+  <div class="kong" *ngIf="length == 0">
+    <img src="./assets/images/cart_kong.png" class="cartion">
+    <div class="desc">购物车还是空的，去挑几件中意的商品吧</div>
+    <button (click)="main()" class="start">开始购物</button>
+  </div>
 
+  <div class="full" *ngIf="length > 0">
+    <ul *ngFor="let c of cake">
+      <li class="photo">
+        <img src="{{c.url}}" class="logo">
+      <li >
+      <li class="word">
+        <div class="name">名称：{{c.name}}</div>
+        <div class="num">数量：
+          <span class="n" (click)="subtract(c.price)">-</span>
+          <span class="shu">{{number}}</span>
+          <span class="n" (click)="add(c.price)">+</span>
+        </div>
+        <div class="append">附加：</div>
+        <div class="price">价格：<span>{{c.price}}元</span></div>
+      </li>
+      <li class="but">
+        <div class="delete" (click)="remove(name)">删除商品</div>
+      </li>
+    </ul>
+    <div class="total">应付总额：<span>{{total}}元</span></div>
+    <div class="butt">
+     <span class="continue" (click)="main()">继续购物</span>
+     <span class="next" (click)="next">下一步</span>
+    </div>
+  </div>
 </ion-content>
+<!--<ion-tab tabIcon="md-cart"  tabBadge="{{length}}" tabBadgeStyle="danger"></ion-tab>-->
+
+
