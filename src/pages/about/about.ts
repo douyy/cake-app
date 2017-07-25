@@ -24,6 +24,7 @@ import {Ucenter16Page} from "./ucenter16/ucenter16";
   templateUrl: 'about.html'
 })
 export class AboutPage {
+  mess:boolean;
 
   constructor(public navCtrl: NavController,public http:Http,
               public actionSheetCtrl: ActionSheetController,) {
@@ -115,5 +116,12 @@ export class AboutPage {
   }
   go16(){
     this.navCtrl.push(Ucenter16Page)
+  }
+
+  weixin(){
+    this.mess = true;
+  }
+  close(){
+    this.mess = false;
   }
 }

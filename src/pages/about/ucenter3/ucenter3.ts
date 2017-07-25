@@ -13,6 +13,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'ucenter3.html',
 })
 export class Ucenter3Page {
+  mess:boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,4 +22,11 @@ export class Ucenter3Page {
     console.log('ionViewDidLoad Ucenter3Page');
   }
 
+  //微信
+  weixin(){
+    this.mess = true;
+  }
+  close(){
+    this.mess = false;
+  }
 }

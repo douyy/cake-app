@@ -1,10 +1,13 @@
-import {Component, ViewChild} from "@angular/core";
-import {NavController,ActionSheetController} from "ionic-angular";
+import {Component, NgZone, ViewChild} from "@angular/core";
+import {NavController,Content,ActionSheetController
+} from "ionic-angular";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
 import {TypePage} from "../type/type";
+import {LongingPage} from "../mycake/longing/longing";
 import {PrdetailPage} from "../type/prdetail/prdetail";
 import {ProductPage} from "../type/product/product";
+
 
 @Component({
   selector: 'page-home',
@@ -13,26 +16,35 @@ import {ProductPage} from "../type/product/product";
 export class HomePage {
   cake:string[];
   type:string[];
+  carts:string[];
   classify:string;
   alert:boolean;
   ca:string;
   cak:string[];
   cc:string;
-  // searchQuery: string = '';
-  // items: string[];
+  phone:any;
+  mess:boolean;
+  topshow:boolean;
+
   //轮播
   @ViewChild('ionSlides') slides;
+  @ViewChild(Content) content:Content;
 
 
-  constructor(public navCtrl: NavController, public http: Http,
-              public actionSheetCtrl: ActionSheetController,) {
-    // this.initializeItems();
+  constructor(public navCtrl: NavController,
+              public http: Http,
+              private actionSheetCtrl:ActionSheetController,
+              public zone:NgZone
+  ) {
     this.cak = [];
     this.cc = '';
+
     //搜索
     this.items = [];
     this.itemseach = [];
+    this.topshow = false;
     this.initializeItems();
+
 
     http.get('http://localhost:3000/cake').toPromise()
       .then(res => {
@@ -49,6 +61,7 @@ export class HomePage {
         this.type = data;
         return data;
       });
+
   }
 
   //搜索
@@ -86,6 +99,7 @@ export class HomePage {
     actionSheet.present();
   }
 
+
   //获得主内容
   getType(classify:string){
     if(this.cake){
@@ -98,17 +112,28 @@ export class HomePage {
   many(){
     this.navCtrl.push(TypePage);
   }
+
   goProduct(type){
     this.navCtrl.push(ProductPage,{type:type});
   }
   godetail(path){
     this.navCtrl.push(PrdetailPage,{path:path});
   }
+
   cart(c){
-    this.cak = JSON.parse(localStorage.getItem('cc'));
-    this.cak.push(c);
-    console.log(c);
-    localStorage.setItem('cc',JSON.stringify(this.cak));
+    console.log(c.cakeid);
+    this.phone =  localStorage.getItem('userphone');
+    if(this.phone == ''){
+     this.navCtrl.push(LongingPage);
+   }else{
+      this.http.post('http://localhost:3000/cake',{c:c.cakeid,phone:this.phone}).toPromise()
+        .then(res=>{
+          var data = res.json().data;
+          console.log(data);
+          this.carts = data;
+          return data;
+        });
+    }
 
     this.alert = true;
     setTimeout(()=>{
@@ -127,5 +152,27 @@ export class HomePage {
   //页面离开时停止自动播放
   ionViewDidLeave() {
     this.slides.stopAutoplay();
+  }
+
+  //回到顶部
+  scrollTo(){
+    this.content.scrollTo(0,0,200);
+  }
+  scrollHandle(event){
+    this.zone.run(()=>{
+      if(event.scrollTop > 100){
+        this.topshow = true;
+      }else{
+        this.topshow = false;
+      }
+    });
+  }
+
+  //微信
+  weixin(){
+    this.mess = true;
+  }
+  close(){
+    this.mess = false;
   }
 }

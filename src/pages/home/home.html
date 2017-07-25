@@ -5,7 +5,7 @@
     <!--<div col-4>菜单 <ion-icon name="menu"></ion-icon></div>-->
   </ion-navbar>
 </ion-header>
-<ion-content class="homecontent">
+<ion-content class="homecontent" (ionScroll)="scrollHandle($event)">
   <div class="action-sheets-basic-page">
     <!--搜索栏-->
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
@@ -116,10 +116,17 @@
   </div>
   <div class="alert" *ngIf="alert">加入购物车成功</div>
   <div class="image">
-    <img src="./assets/images/xf_wx.png"><br>
+    <img src="./assets/images/xf_wx.png" (click)="weixin()"><br>
+    <div class="message" *ngIf="mess">
+      <p>亲爱的主人</p>
+      <p>加微信公众号：<span>七彩蛋糕客服</span></p>
+      <p>可以直接和我对话</p>
+      <p>更好的为您服务</p>
+      <div class="close" (click)="close()">关闭</div>
+    </div>
     <img src="./assets/images/xf_kf.png"><br>
-    <img src="./assets/images/scroll-to-top-icon.png">
+    <img src="./assets/images/scroll-to-top-icon.png" (click)="scrollTo()" *ngIf="topshow">
   </div>
 
-  <div class="number">{{length}}</div>
+  <!--<div class="number">{{length}}</div>-->
 </ion-content>

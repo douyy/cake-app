@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild , NgZone} from '@angular/core';
+import { NavController,Content} from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 import {ProductPage} from "./product/product";
 import {Http} from "@angular/http";
@@ -8,16 +8,21 @@ import {Http} from "@angular/http";
   selector: 'page-contact',
   templateUrl: 'type.html'
 })
+
 export class TypePage {
+  @ViewChild(Content) content:Content;
 
     searchQuery: string = '';
     items: string[];
     itemseach:string[];
+    mess:boolean;
+    topshow:boolean;
 
   constructor(
       public navCtrl: NavController,
       public actionSheetCtrl: ActionSheetController,
-      public http:Http
+      public http:Http,
+      public zone:NgZone
   ) {
     this.items = [];
     this.itemseach = [];
@@ -81,5 +86,27 @@ export class TypePage {
   //  链接跳转
   go(type){
     this.navCtrl.push(ProductPage,{type:type})
+  }
+
+  //回到顶部
+  scrollTo(){
+    this.content.scrollTo(0,0,200);
+  }
+  scrollHandle(event){
+    this.zone.run(()=>{
+      if(event.scrollTop > 100){
+        this.topshow = true;
+      }else{
+        this.topshow = false;
+      }
+    });
+  }
+
+  //微信
+  weixin(){
+    this.mess = true;
+  }
+  close(){
+    this.mess = false;
   }
 }
