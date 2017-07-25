@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="0px 10px">
+  <div class="ion-ipt" style="margin-top: 0;">
+    <div class="ion-user ion-cur2">
+      <input type="" placeholder="请输入验证码">
+    </div>
+    <div class="ion-user ion-te">
+        <div class="button" col-6>
+          <input  col-11 type="phone" placeholder="请输入手机号" [(ngModel)]="user.phone">
+        </div>
+        <button col-5>获取验证码</button>
+    </div>
+    <div class="ion-user ion-cur2">
+      <input type="name" placeholder="请输入短信验证码">
+    </div>
+    <div class="ion-user ion-cur2">
+      <input type="name" placeholder="请输入姓名" [(ngModel)]="user.name">
+    </div>
+    <div class="ion-user ion-cur2">
+      <input type="password" placeholder="请输入密码" [(ngModel)]="user.password">
+    </div>
+    <br>
+    <span>注册即视为同意<a style="color: red" href="javascript:;">《七彩用户注册协议》</a></span>
+    <div padding>
+      <!--<button ion-button block>注  册</button>-->
+      <button ion-button color="light" block (click)="register(user)">注  册</button>
+    </div>
+  </div>
+</ion-content>

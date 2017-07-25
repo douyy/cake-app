@@ -12,9 +12,6 @@ import { MycakePage } from '../pages/mycake/mycake';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ProductPage } from "../pages/type/product/product";
-import {HttpModule} from "@angular/http";
-import {PrdetailPage} from "../pages/type/prdetail/prdetail";
 
 @NgModule({
   declarations: [
@@ -24,12 +21,10 @@ import {PrdetailPage} from "../pages/type/prdetail/prdetail";
     HomePage,
     TabsPage,
     ShoppingPage,
-    MycakePage,
-    ProductPage,
-    PrdetailPage
+    MycakePage
   ],
   imports: [
-    BrowserModule,HttpModule,
+    BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,9 +35,7 @@ import {PrdetailPage} from "../pages/type/prdetail/prdetail";
     HomePage,
     TabsPage,
     ShoppingPage,
-    MycakePage,
-    ProductPage,
-    PrdetailPage
+    MycakePage
   ],
   providers: [
     StatusBar,

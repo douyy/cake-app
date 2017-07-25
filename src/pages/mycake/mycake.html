@@ -1,11 +1,63 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>
-      About啦啦啦
+     用户登录
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content>
+  <ion-list style="margin-top: 0;">
+    <div padding>
+      <ion-segment [(ngModel)]="login">
+        <ion-segment-button value="password">
+          手机号+密码登录
+        </ion-segment-button>
+        <ion-segment-button value="verify">
+          手机号+验证码登录
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div [ngSwitch]="login"  no-lines>
+      <ion-list *ngSwitchCase="'password'">
+        <div class="ion-user ion-cur3">
+          <input type="phone" placeholder="请输入手机号" [(ngModel)]="user.phone">
+        </div>
+        <div class="ion-user ion-cur3">
+          <input type="password" placeholder="请输入密码" [(ngModel)]="user.password">
+        </div>
+        <div class="ion-user ion-cur3">
+          <input type="yangma" placeholder="请输入验证码">
+        </div>
+        <div padding>
+          <button ion-button color="light" block (click)="logins(user);">登 录</button>
+        </div>
+        <div class="login-option">
+          <a class="register" (click)="register()">免费注册</a>
+          <a class="find" (click)="findpassword()">找回密码</a>
+        </div>
+      </ion-list>
+      <ion-list *ngSwitchCase="'verify'">
+        <div class="ion-user ion-cur3">
+          <input type="yanzheng" placeholder="请输入图片验证码">
+        </div>
+        <div class="ion-user ion-te">
+          <div class="button" col-6>
+            <input  col-11 type="phone" placeholder="请输入手机号">
+          </div>
+          <button col-5>获取验证码</button>
+        </div>
+        <div class="ion-user ion-cur3">
+            <input type="news" placeholder="请输入短信验证码">
+        </div>
+        <div padding>
+          <button ion-button color="light" block>登 录</button>
+        </div>
+        <div class="login-option">
+          <a class="register" (click)="register()">免费注册</a>
+          <a class="find" (click)="findpassword()">找回密码</a>
+        </div>
+      </ion-list>
+    </div>
+  </ion-list>
 </ion-content>
+

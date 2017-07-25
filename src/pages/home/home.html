@@ -1,17 +1,122 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <!--<div col-2>分类</div>-->
+  <ion-title>麦香蛋糕</ion-title>
+    <!--<div col-4>菜单 <ion-icon name="menu"></ion-icon></div>-->
+
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
+  <!--<ion-list>-->
+    <!--<ion-item *ngFor="let item of items">-->
+      <!--{{ item }}-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+
+  <!--轮播-->
+  <ion-slides pager #ionSlides loop="true" autoplay="3000">
+
+    <ion-slide>
+      <img src="https://www.dangao.com/imgbanner/m_banner1.jpg">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://www.dangao.com/imgbanner/m_banner6.jpg">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://www.dangao.com/imgbanner/m_banner4.jpg">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://www.dangao.com/imgbanner/m_banner8.jpg">
+    </ion-slide>
+
+  </ion-slides>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <div>
+          <img src="./assets/images/cake.png">
+          <p>蛋糕</p>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+        <div>
+          <img src="./assets/images/flower.png">
+          <p>鲜花</p>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+        <div>
+          <img src="./assets/images/lm11.png">
+          <p>浪漫组合</p>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+        <div class="many" (click)="many()">
+          <img src="./assets/images/more.png">
+          <p class="more">更多</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+        <span class="green">订单去哪儿了</span>
+      </ion-col>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+        <span class="red">400-658-1177</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+        <span class="lightred">在线咨询</span>
+      </ion-col>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+        <span class="blue">QQ:139010678</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="box" >
+    <div class="head" *ngFor="let t of type">
+      <div class="A" col-1>{{t.letter}}</div>
+      <div class="title" col-9>{{t.classify}}</div>
+      <div class="further" col-2>更多>></div>
+      <div class="xian" col-12></div>
+      <ul>
+        <li class="product" *ngFor="let c of getType(t.classify)" col-6>
+          <img src="{{c.url}}" alt="" class="productImg">
+          <img src="./assets/images/hot_rm.png" *ngIf="c.ishot" class="hot">
+          <img src="./assets/images/hot_tj.png" *ngIf="c.iste" class="hot">
+          <img src="./assets/images/hot_xp.png" *ngIf="c.isnew" class="hot">
+          <p>{{c.name}}</p>
+          <p>{{c.introduce}}</p>
+          <p>￥{{c.price}}
+            <img src="./assets/images/cartico0.png" class="cart" (click)="cart(c)">
+            <span>购买</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert" *ngIf="alert">加入购物车成功</div>
+  <div class="image">
+    <img src="./assets/images/xf_wx.png"><br>
+    <img src="./assets/images/xf_kf.png"><br>
+    <img src="./assets/images/scroll-to-top-icon.png">
+  </div>
+
+  <div class="number">{{length}}</div>
 </ion-content>
+
+
+
+
