@@ -14,3 +14,95 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.tabs-ios .tab-button[aria-selected=true],.tabs-md .tab-button[aria-selected=true]{
+  color: #dc1437;
+}
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon,
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+  color:#dc1437;
+}
+.ion-ios-attach:before{
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.header-ios .toolbar-background-ios,
+.header-md .toolbar-background-md{
+  border:0;
+}
+.toolbar-background-ios,.toolbar-background-md{
+  background-color: #dc1437;
+}
+.toolbar-title-ios,.toolbar-title-md{
+  color: #fff;
+}
+.searchbar-input-container{
+  width:68%;
+}
+.searchbar-ios .searchbar-input,.searchbar-md .searchbar-input{
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  border-radius:0px;
+  height: 2.5rem;
+}
+.searchbar-ios.searchbar-left-aligned .searchbar-input,
+.searchbar-md.searchbar-left-aligned .searchbar-input{
+  padding-left:5px;
+}
+.searchbar-ios .searchbar-search-icon,
+.searchbar-md .searchbar-search-icon{
+  left:90%;
+  background-size:16px;
+}
+.searchbar-md .searchbar-search-icon{
+  -webkit-background-size:18px;
+  background-size:18px;
+  margin-top:-4px;
+}
+.searchbar-ios,.searchbar-md{
+  background:#ecebe6;
+}
+.action-sheets-basic-page{
+  position: relative;
+}
+.action-sheets-basic-page button.zixun{
+  background-color: #66cc66;
+  height:2.5rem;
+  width:30%;
+  position: absolute;
+  right:5px;
+  top:2px;
+}
+.item-block{
+  width:100%;
+  min-height:0;
+  height:30px;
+  color: gray;
+}
+.list-ios > .item-block:first-child{
+  border-top:0;
+}
+.list-ios,.list-md{
+  margin:-7px 0 0 8px;
+  z-index: 999;
+  position: absolute;
+  width:40%;
+  border:1px solid #dddddd;
+  border-top:0;
+}
+page-contact .dec .row ion-col {
+  text-align: left;
+}
+.item-md,.item-ios{
+  padding-left: 0;
+}
+.label-md,.label-ios{
+  margin-left:8px;
+}
+.searchbar-md .searchbar-clear-icon,.searchbar-ios .searchbar-clear-icon
+{
+  background-image: none;
+}
+

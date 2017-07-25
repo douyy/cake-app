@@ -1,17 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      分类
+      产品分类
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
+<ion-content class="action-sheets-basic-page">
+  <!--搜索栏-->
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list *ngIf="itemseach.length > 0">
+    <ion-item *ngFor="let item of itemseach">
+      {{ item }}
     </ion-item>
   </ion-list>
+  <button ion-button block (click)="openMenu()" class="zixun">
+    在线咨询
+  </button>
+  <!--类别-->
+  <ion-grid>
+    <ion-row class="row">
+      <ion-col (click)="go('蛋糕')">
+          <img src="../../../assets/images/class_dg.png" alt="">
+          <p>蛋糕</p>
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/images/class_dg.png" alt="">
+        <p>鲜花</p>
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/images/class_dg.png" alt="">
+        <p>浪漫组合</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
