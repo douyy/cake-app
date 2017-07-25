@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ActionSheetController } from 'ionic-angular';
 import {HomePage} from "../home/home";
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'page-about',
@@ -12,7 +13,9 @@ export class ShoppingPage{
   number:number;
   total:number;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              public http:Http,
+              public actionSheetCtrl: ActionSheetController) {
     this.cake = [];
     this.length = 1;
      this.cake = JSON.parse(localStorage.getItem('cc'));
@@ -21,8 +24,45 @@ export class ShoppingPage{
     this.length = this.cake ? this.cake.length : 0;
     this.number = 1;
     console.log(this.cake);
+    //搜索
+    this.items = [];
+    this.itemseach = [];
+    this.initializeItems();
+  }
+  //搜索
+  items:string[];
+  itemseach:string[];
+  initializeItems() {
+    this.http.get('http://localhost:3000/birthdayApp/stype')
+      .toPromise().then(res=>{
+      var data = res.json().data;
+      for(var i = 0;i < data.length;i++){
+        this.items.push(data[i].stype);
+      }
+    })
   }
 
+  getItems(ev: any) {
+    // Reset items back to all of the items
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.itemseach = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }else{
+      this.itemseach = [];
+    }
+  }
+  openMenu() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title:'啦啦啦啦',
+    });
+    actionSheet.present();
+  }
 
   //页面跳转
   main(){

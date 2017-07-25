@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams,ActionSheetController} from 'ionic-angular';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {PrdetailPage} from "../prdetail/prdetail";
@@ -25,6 +25,7 @@ export class ProductPage implements OnInit{
   constructor(
       public navCtrl: NavController,
       public navParams:NavParams,
+      public actionSheetCtrl: ActionSheetController,
       public http:Http
   ) {
   }
@@ -86,6 +87,12 @@ export class ProductPage implements OnInit{
     }else{
       this.itemseach = [];
     }
+  }
+  openMenu() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title:'啦啦啦啦',
+    });
+    actionSheet.present();
   }
 
   //  错误处理

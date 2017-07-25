@@ -2,11 +2,12 @@ a{
   text-decoration: none;
 }
 .HelpFir{
-  width:100%;
+  width:95%;
   margin:0 auto;
   border:1px solid #DEDEDE;
   border-radius:5px;
   overflow: hidden;
+  margin-top:10px;
 }
 .Helpdec{
   width:100%;
@@ -38,5 +39,13 @@ a{
   color: #666666;
   line-height:3rem;
   font-size:1rem;
+}
+.btn{
+  width:95%;
+  margin:0 auto;
+  margin-top:10px;
+}
+.btn button{
+  width:100%;
 }
 

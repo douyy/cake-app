@@ -7,6 +7,18 @@
 </ion-header>
 
 <ion-content class="gwc">
+  <div class="action-sheets-basic-page">
+    <!--搜索栏-->
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list *ngIf="itemseach.length > 0">
+      <ion-item *ngFor="let item of itemseach">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+    <button ion-button block (click)="openMenu()" class="zixun">
+      在线咨询
+    </button>
+  </div>
   <div class="kong" *ngIf="length == 0">
     <img src="./assets/images/cart_kong.png" class="cartion">
     <div class="desc">购物车还是空的，去挑几件中意的商品吧</div>

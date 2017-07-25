@@ -6,7 +6,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <div class="action-sheets-basic-page">
+    <!--搜索栏-->
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list *ngIf="itemseach.length > 0">
+      <ion-item *ngFor="let item of itemseach">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+    <button ion-button block (click)="openMenu()" class="zixun">
+      在线咨询
+    </button>
+  </div>
     <div class="HelpFir">
       <div class="Helpdec">
         <div>
@@ -118,6 +130,10 @@
     </div>
   </div>
     </div>
-
-
+    <div class="btn">
+      <button ion-button color="danger">服务热线:400-658-1177</button>
+    </div>
+    <div class="btn">
+      <button ion-button color="secondary">客服QQ:139 010 678</button>
+    </div>
 </ion-content>

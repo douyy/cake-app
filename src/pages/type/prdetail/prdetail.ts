@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, Slides} from 'ionic-angular';
+import {NavController, NavParams, Slides,ActionSheetController} from 'ionic-angular';
 import {Http} from "@angular/http";
 
 @Component({
@@ -19,12 +19,15 @@ export class PrdetailPage {
   dd:string[];
   sizestr:string;
   discuss:string[];
+  items: string[];
+  itemseach:string[];
 
   @ViewChild(Slides) slides:Slides;
 
   constructor(
       public navCtrl: NavController,
       public navParams:NavParams,
+      public actionSheetCtrl: ActionSheetController,
       public http:Http
   ) {
       this.detail = this.navParams.data.path;
@@ -35,7 +38,10 @@ export class PrdetailPage {
       this.money = this.detail['price'];
       this.oldmoney = this.detail['oldprice'];
       this.joinarr = [];
-      // console.log(this.detail);
+      this.items = [];
+      this.itemseach = [];
+      this.initializeItems();
+
       //tabs
       let elements = document.querySelectorAll(".tabbar");
       if(elements != null) {
@@ -127,6 +133,36 @@ export class PrdetailPage {
     localStorage.setItem('aa',this.obj);
     this.dd = JSON.parse(localStorage.getItem('aa'));
   }
+  //搜索
+  initializeItems() {
+    this.http.get('http://localhost:3000/birthdayApp/stype')
+      .toPromise().then(res=>{
+      var data = res.json().data;
+      for(var i = 0;i < data.length;i++){
+        this.items.push(data[i].stype);
+      }
+    })
+  }
 
+  getItems(ev: any) {
+    // Reset items back to all of the items
 
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.itemseach = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }else{
+      this.itemseach = [];
+    }
+  }
+  openMenu() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title:'啦啦啦啦',
+    });
+    actionSheet.present();
+  }
 }

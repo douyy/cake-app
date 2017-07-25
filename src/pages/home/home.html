@@ -6,12 +6,18 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="homecontent">
-  <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
-  <!--<ion-list>-->
-  <!--<ion-item *ngFor="let item of items">-->
-  <!--{{ item }}-->
-  <!--</ion-item>-->
-  <!--</ion-list>-->
+  <div class="action-sheets-basic-page">
+    <!--搜索栏-->
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list *ngIf="itemseach.length > 0">
+      <ion-item *ngFor="let item of itemseach">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+    <button ion-button block (click)="openMenu()" class="zixun">
+      在线咨询
+    </button>
+  </div>
 
   <!--轮播-->
   <div class="homelun">
