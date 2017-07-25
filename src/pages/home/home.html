@@ -1,38 +1,37 @@
 <ion-header>
   <ion-navbar>
     <!--<div col-2>分类</div>-->
-  <ion-title>麦香蛋糕</ion-title>
+    <ion-title>麦香蛋糕</ion-title>
     <!--<div col-4>菜单 <ion-icon name="menu"></ion-icon></div>-->
-
   </ion-navbar>
-
 </ion-header>
-
 <ion-content>
   <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
   <!--<ion-list>-->
-    <!--<ion-item *ngFor="let item of items">-->
-      <!--{{ item }}-->
-    <!--</ion-item>-->
+  <!--<ion-item *ngFor="let item of items">-->
+  <!--{{ item }}-->
+  <!--</ion-item>-->
   <!--</ion-list>-->
 
   <!--轮播-->
   <ion-slides pager #ionSlides loop="true" autoplay="3000">
-
     <ion-slide>
       <img src="https://www.dangao.com/imgbanner/m_banner1.jpg">
     </ion-slide>
-
     <ion-slide>
       <img src="https://www.dangao.com/imgbanner/m_banner6.jpg">
     </ion-slide>
 
     <ion-slide>
-      <img src="https://www.dangao.com/imgbanner/m_banner4.jpg">
+      <img src="https://www.dangao.com/imgbanner/m_banner4.jpg
+
+">
     </ion-slide>
 
     <ion-slide>
-      <img src="https://www.dangao.com/imgbanner/m_banner8.jpg">
+      <img src="https://www.dangao.com/imgbanner/m_banner8.jpg
+
+">
     </ion-slide>
 
   </ion-slides>
@@ -41,25 +40,25 @@
     <ion-row>
       <ion-col col-3>
         <div>
-          <img src="./assets/images/cake.png">
+          <img src="../../assets/images/cake.png">
           <p>蛋糕</p>
         </div>
       </ion-col>
       <ion-col col-3>
         <div>
-          <img src="./assets/images/flower.png">
+          <img src="../../assets/images/flower.png">
           <p>鲜花</p>
         </div>
       </ion-col>
       <ion-col col-3>
         <div>
-          <img src="./assets/images/lm11.png">
+          <img src="../../assets/images/lm11.png">
           <p>浪漫组合</p>
         </div>
       </ion-col>
       <ion-col col-3>
         <div class="many" (click)="many()">
-          <img src="./assets/images/more.png">
+          <img src="../../assets/images/more.png">
           <p class="more">更多</p>
         </div>
       </ion-col>
@@ -97,13 +96,15 @@
           <img src="./assets/images/hot_rm.png" *ngIf="c.ishot" class="hot">
           <img src="./assets/images/hot_tj.png" *ngIf="c.iste" class="hot">
           <img src="./assets/images/hot_xp.png" *ngIf="c.isnew" class="hot">
-          <p>{{c.name}}</p>
+          <p>{{c.name
+
+            }}</p>
           <p>{{c.introduce}}</p>
           <p>￥{{c.price}}
             <img src="./assets/images/cartico0.png" class="cart" (click)="cart(c)">
             <span>购买</span>
           </p>
-        </li>
+          <li>
       </ul>
     </div>
   </div>
@@ -116,7 +117,3 @@
 
   <div class="number">{{length}}</div>
 </ion-content>
-
-
-
-

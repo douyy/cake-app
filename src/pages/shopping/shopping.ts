@@ -15,12 +15,12 @@ export class ShoppingPage{
   constructor(public navCtrl: NavController) {
     this.cake = [];
     this.length = 1;
-    // this.cake = JSON.parse(localStorage.getItem('cc'));
-    // console.log(JSON.parse(localStorage.getItem('cc')));
-    // // localStorage.removeItem('cc');
-    // this.length = this.cake ? this.cake.length : 0;
-    // this.number = 1;
-    // console.log(this.cake);
+     this.cake = JSON.parse(localStorage.getItem('cc'));
+     console.log(JSON.parse(localStorage.getItem('cc')));
+    // localStorage.removeItem('cc');
+    this.length = this.cake ? this.cake.length : 0;
+    this.number = 1;
+    console.log(this.cake);
   }
 
 
@@ -35,6 +35,7 @@ export class ShoppingPage{
     let index = this.cake.indexOf(name);
     this.cake.splice(index,1);
     console.log(this.cake);
+    localStorage.removeItem('cc');
   }
 
 //  数量增加
