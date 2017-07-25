@@ -10,23 +10,23 @@ page-about {
     border:1px solid red;
     color: red;
   }
-  .link-alladress ul{
+  .link-alladress ul.linkul{
     padding-top: 20px;
     background-color: #f1f1f5;
     font-size: 16px;
   }
-  .link-alladress ul li{
+  .link-alladress ul.linkul li.linkli{
     padding: 6px 10px;
     background-color: white;
     height: 30px;
   }
-  .link-alladress ul li.ulli2{
+  .link-alladress ul.linkul li.ulli2{
     border-bottom:1px solid gray;
   }
-  .link-alladress ul:first-child li.ulli3 button:last-child{
+  .link-alladress ul.linkul:first-child li.ulli3 button:last-child{
     display: none;
   }
-  .link-alladress ul li.ulli3 input{
+  .link-alladress ul.linkul li.ulli3 input{
     width: 20px;
     height: 20px;
     color: red;

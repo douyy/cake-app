@@ -6,19 +6,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list style="margin-top: 0;">
-    <div padding>
+  <ion-list class="mycake" col-12>
+    <div class="mycake-top">
       <ion-segment [(ngModel)]="login">
         <ion-segment-button value="password">
           手机号+密码登录
         </ion-segment-button>
         <ion-segment-button value="verify">
-          手机号+验证码登录
+          手机号+验证码登录。
         </ion-segment-button>
       </ion-segment>
     </div>
     <div [ngSwitch]="login"  no-lines>
-      <ion-list *ngSwitchCase="'password'">
+      <ion-list *ngSwitchCase="'password'" class="mycake2">
         <div class="ion-user ion-cur3">
           <input type="phone" placeholder="请输入手机号" [(ngModel)]="user.phone">
         </div>
@@ -36,7 +36,7 @@
           <a class="find" (click)="findpassword()">找回密码</a>
         </div>
       </ion-list>
-      <ion-list *ngSwitchCase="'verify'">
+      <ion-list *ngSwitchCase="'verify'"  class="mycake2">
         <div class="ion-user ion-cur3">
           <input type="yanzheng" placeholder="请输入图片验证码">
         </div>

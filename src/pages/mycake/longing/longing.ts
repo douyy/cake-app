@@ -21,7 +21,7 @@ export class LongingPage{
     if (!this.phone){
       alert("请先登录")
       this.navCtrl.push(MycakePage);
-      console.log(this.phone);
+      //console.log(this.phone);
     }
   }
 
@@ -33,7 +33,7 @@ export class LongingPage{
         console.log(body);
         console.log(this.phone)
         if(body.success){
-          console.log(body.date);
+          //console.log(body.date);
           this.navCtrl.push(ChangePage,{user : body.date});
         }
       })
@@ -42,7 +42,7 @@ export class LongingPage{
   addadress(){this.navCtrl.push(LinkmanPage);}
   quirt(){
     localStorage.removeItem('userphone')
-    console.log(this.phone);
+    //console.log(this.phone);
     this.navCtrl.parent.select(0);
   }
 }
