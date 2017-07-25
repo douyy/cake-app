@@ -2,7 +2,7 @@ ion-header ion-navbar div{
   float:left;
   text-align:center;
 }
-.content{
+.homecontent{
   background-color: #f4f4f4;
 }
 .searchbar-ios {
@@ -23,8 +23,9 @@ ion-header ion-navbar div{
 .searchbar-ios.searchbar-left-aligned .searchbar-input {
   padding-left: 5px;
 }
-ion-slides {
-  height:221px;
+div.homelun {
+  //height:221px;
+  width:100%;
 }
 //轮播
 .swiper-pagination-bullet{
@@ -42,7 +43,7 @@ ion-slides {
   text-align:center;
   width:96%;
 }
-.grid img{
+.cake img{
   width:60%;
   height:60%;
 }
@@ -54,11 +55,11 @@ ion-slides {
 .grid p.more{
   color:#f00;
 }
-.grid:nth-child(3){
+.grid.dingdan{
   background-color: #f4f4f4;
   margin-top:-10px;
 }
-.grid span{
+.grid.dingdan span{
   display:block;
   height:38px;
   line-height:38px;
@@ -67,66 +68,66 @@ ion-slides {
   text-align: left;
   padding-left:30px;
 }
-.grid img.icon{
+.grid.dingdan img.icon{
   width:23px;
   height:23px;
 }
-.grid span.green{
+.grid.dingdan span.green{
   background-color: #66cc66;
   margin-left:-10px;
   position: relative;
 }
-.grid span.green::before{
+.grid.dingdan span.green::before{
   content:'';
   position: absolute;
   left:6px;
   top:6px;
-  background: url(./../assets/images/home_pay.png);
+  background: url(../../assets/images/home_pay.png);
   -webkit-background-size:23px 23px;
   background-size:23px 23px;
   width:23px;
   height:23px;
 }
-.grid span.red{
+.grid.dingdan span.red{
   background-color: #dc4f45;
   margin-right:-10px;
 }
-.grid span.red::before{
+.grid.dingdan span.red::before{
   content:'';
   position: absolute;
   left:10px;
   top:13px;
-  background: url(./../assets/images/home_phone.png);
+  background: url(../../assets/images/home_phone.png);
   -webkit-background-size:23px 23px;
   background-size:23px 23px;
   width:23px;
   height:23px;
 }
-.grid span.lightred{
+.grid.dingdan span.lightred{
   background-color: #ff6666;
   margin-left:-10px;
 }
-.grid span.lightred::before{
+.grid.dingdan span.lightred::before{
   content:'';
   position: absolute;
   left:3px;
   top:13px;
-  background: url(./../assets/images/home_zx.png);
+  background: url(../../assets/images/home_zx.png);
   -webkit-background-size:23px 23px;
   background-size:23px 23px;
   width:23px;
   height:23px;
 }
-.grid span.blue{
+.grid.dingdan span.blue{
   background-color: #01a019;
   margin-right:-10px;
 }
-.grid span.blue::before{
+.grid.dingdan span.blue::before{
   content:'';
   position: absolute;
   left:6px;
   top:13px;
-  background: url(./../assets/images/home_qq.png);
+  background: url(../../assets/images/home_qq.png);
   -webkit-background-size:23px 23px;
   background-size:23px 23px;
   width:23px;
@@ -135,7 +136,7 @@ ion-slides {
 .head .A,.head .further{
   height:26px;
   background-color: #e4393c;
-  line-height:20px;
+  line-height:26px;
   color:#fff;
   border-radius:3px;
   text-align:center;
@@ -159,15 +160,21 @@ ion-slides {
 .box .head .A{
   width:26px;
   margin-left:10px;
+  float: left;
 }
 .box .head div.further {
   width: 65px;
+  float: right;
+  margin-right:10px;
 }
 .box .head .title{
   font-size:18px;
   color:#e4393c;
   font-weight:600;
   text-align:left;
+  float: left;
+  margin-top:5px;
+  margin-left:10px;
 }
 ul{
   list-style: none;
@@ -188,7 +195,7 @@ ul li img.hot{
   top:10px;
   right:20px;
 }
-ul li p{
+.box ul li p{
   background-color: #fff;
   width:96%;
   margin:0;
@@ -198,18 +205,17 @@ ul li p{
   padding-left:20px;
   color:#333;
 }
-ul li p:last-child{
+.box ul li p:last-child{
   color:#f00;
   font-size:17px;
   font-weight:600;
   position: relative;
 }
-ul li p:last-child img.cart{
+.box ul li p:last-child img.cart{
   width:22px;
   height:22px;
-  margin-left:20px;
 }
-ul li p:last-child span{
+.box ul li p:last-child span{
   position: absolute;
   right:10px;
   font-size:13px;

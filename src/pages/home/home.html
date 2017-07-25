@@ -5,7 +5,7 @@
     <!--<div col-4>菜单 <ion-icon name="menu"></ion-icon></div>-->
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="homecontent">
   <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
   <!--<ion-list>-->
   <!--<ion-item *ngFor="let item of items">-->
@@ -14,29 +14,30 @@
   <!--</ion-list>-->
 
   <!--轮播-->
-  <ion-slides pager #ionSlides loop="true" autoplay="3000">
-    <ion-slide>
-      <img src="https://www.dangao.com/imgbanner/m_banner1.jpg">
-    </ion-slide>
-    <ion-slide>
-      <img src="https://www.dangao.com/imgbanner/m_banner6.jpg">
-    </ion-slide>
+  <div class="homelun">
+    <ion-slides pager #ionSlides loop="true" autoplay="3000">
+      <ion-slide>
+        <img src="https://www.dangao.com/imgbanner/m_banner1.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="https://www.dangao.com/imgbanner/m_banner6.jpg">
+      </ion-slide>
 
-    <ion-slide>
-      <img src="https://www.dangao.com/imgbanner/m_banner4.jpg
+      <ion-slide>
+        <img src="https://www.dangao.com/imgbanner/m_banner4.jpg
 
-">
-    </ion-slide>
+  ">
+      </ion-slide>
 
-    <ion-slide>
-      <img src="https://www.dangao.com/imgbanner/m_banner8.jpg
+      <ion-slide>
+        <img src="https://www.dangao.com/imgbanner/m_banner8.jpg
 
-">
-    </ion-slide>
+  ">
+      </ion-slide>
 
-  </ion-slides>
-
-  <ion-grid>
+    </ion-slides>
+  </div>
+  <ion-grid class="cake">
     <ion-row>
       <ion-col col-3>
         <div>
@@ -65,7 +66,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-grid>
+  <ion-grid class="dingdan">
     <ion-row>
       <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
         <span class="green">订单去哪儿了</span>
@@ -84,11 +85,11 @@
     </ion-row>
   </ion-grid>
 
-  <div class="box" >
+  <div class="box">
     <div class="head" *ngFor="let t of type">
-      <div class="A" col-1>{{t.letter}}</div>
-      <div class="title" col-9>{{t.classify}}</div>
-      <div class="further" col-2>更多>></div>
+      <div class="A">{{t.letter}}</div>
+      <div class="title">{{t.classify}}</div>
+      <div class="further">更多>></div>
       <div class="xian" col-12></div>
       <ul>
         <li class="product" *ngFor="let c of getType(t.classify)" col-6>
