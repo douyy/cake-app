@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title}}产品
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="action-sheets-basic-page">
+        <!--搜索栏-->
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        <ion-list *ngIf="itemseach.length > 0">
+          <ion-item *ngFor="let item of itemseach">
+            {{ item }}
+          </ion-item>
+        </ion-list>
+        <button ion-button block (click)="openMenu()" class="zixun">
+          在线咨询
+        </button>
+    </div>
+
+    <p class="xuan" *ngIf="xuan.length > 0">
+      已选择：
+      <span *ngFor="let x of xuan">{{x}}</span>
+    </p>
+    <!--nav1 隐藏-->
+    <div class="con" *ngIf="togg">
+      <nav *ngFor="let bt of btype">
+        <p>{{bt.btype}}</p>
+        <ul>
+          <li>
+            <span class="current" (click)="cur(bt.btype,'')"
+                  [class.current]="isSelected(bt.btype,'')">全部</span>
+            <span class="xian">|</span>
+          </li>
+          <li *ngFor="let st of getSt(bt.btype)">
+            <span (click)="cur(bt.btype,st.typeid,st.stype)"
+              [class.current]="isSelected(bt.btype,st.typeid)">{{st.stype}}</span>
+            <span class="xian">|</span>
+          </li>
+        </ul>
+      </nav>
+      <div class="btn">
+        <button ion-button color="danger" (click)="hide()">收起</button>
+        <button ion-button color="secondary" (click)="select()">确定</button>
+      </div>
+    </div>
+    <!--nav2-->
+    <div class="con" *ngIf="!togg">
+      <nav>
+        <ul *ngIf="xuan.length <= 3">
+          <li *ngIf="xuan.length==0">
+            <span class="current">全部</span>
+            <span class="xian">|</span>
+          </li>
+          <li *ngFor="let st of getSt(btypenow)">
+            <span (click)="choose(st.typeid,st.stype,st.btype)"
+                  [class.current]="isSelected(st.btype,st.typeid)">{{st.stype}}</span>
+            <span class="xian">|</span>
+          </li>
+          <li><span class="more" (click)="hide()">更多...</span></li>
+        </ul>
+      </nav>
+      <!--更改筛选条件-->
+      <ion-grid class="shai">
+        <ion-row>
+          <ion-col class="xian">
+            <p></p>
+          </ion-col>
+          <ion-col (click)="hide()">更多筛选条件▼</ion-col>
+          <ion-col class="xian">
+            <p></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!--综合-->
+    <ion-grid class="zonghe">
+      <ion-row>
+        <ion-col (click)="zonghe('1')" [ngClass]="{'xuan2':zong==1}">综合↓</ion-col>
+        <ion-col (click)="zonghe('2')" [ngClass]="{'xuan2':zong==2}">价格↓</ion-col>
+        <ion-col (click)="zonghe('3')" [ngClass]="{'xuan2':zong==3}">销量↓</ion-col>
+        <ion-col (click)="zonghe('4')" [ngClass]="{'xuan2':zong==4}">新品↓</ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--列表-->
+    <ion-row class="list" *ngIf="cake != []">
+      <ion-col *ngFor="let c of cake" col-6>
+         <div>
+             <img src="{{c.url}}" alt="" (click)="detail(c)">
+             <p>{{c.name}}</p>
+             <p>{{c.introduce}}</p>
+             <p>
+               <span class="price">¥{{c.price}}</span>
+               <ion-icon name="ios-cart-outline" class="ionc"></ion-icon>
+               <button ion-button outline class="goumai">购买</button>
+             </p>
+         </div>
+      </ion-col>
+    </ion-row>
+    <!--无-->
+    <ion-row *ngIf="cake == []">
+      <ion-col class="wu">没有你搜索的蛋糕，请换个条件。。。</ion-col>
+    </ion-row>
+    <!--分页-->
+    <ion-row *ngIf="total > 6">
+      <ion-col>
+        <button ion-button color="danger" round (click)="prev()" [disabled]="index == 1">上一页</button>
+        <button ion-button color="danger" round (click)="next()" [disabled]="index * size >= total">下一页</button>
+      </ion-col>
+    </ion-row>
+</ion-content>
+
+
+
