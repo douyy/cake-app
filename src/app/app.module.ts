@@ -11,6 +11,7 @@ import { MycakePage } from '../pages/mycake/mycake';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {ProductPage} from "../pages/type/product/product";
+import {LinkmanPage} from "../pages/mycake/longing/linkman/linkman";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ProductPage} from "../pages/type/product/product";
     TabsPage,
     ShoppingPage,
     MycakePage,
-    ProductPage
+    ProductPage,
+    LinkmanPage
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import {ProductPage} from "../pages/type/product/product";
     TabsPage,
     ShoppingPage,
     MycakePage,
+    LinkmanPage
   ],
   providers: [
     StatusBar,
