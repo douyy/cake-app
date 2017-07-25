@@ -17,6 +17,7 @@ import {AdressPage} from "../pages/mycake/longing/adress/adress";
 import {ChangePage} from "../pages/mycake/longing/change/change";
 import {ChangepassPage} from "../pages/mycake/longing/changepass/changepass";
 import {RegisterPage} from "../pages/mycake/register/register";
+import {PrdetailPage} from "../pages/type/prdetail/prdetail";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {RegisterPage} from "../pages/mycake/register/register";
     ShoppingPage,
     MycakePage,
     ProductPage,
+    PrdetailPage,
     LinkmanPage,
     FindPage,
     AdressPage,
@@ -48,6 +50,8 @@ import {RegisterPage} from "../pages/mycake/register/register";
     TabsPage,
     ShoppingPage,
     MycakePage,
+    ProductPage,
+    PrdetailPage,
     LinkmanPage,
     FindPage,
     AdressPage,
