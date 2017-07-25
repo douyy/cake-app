@@ -20,6 +20,22 @@ import {RegisterPage} from "../pages/mycake/register/register";
 import {PrdetailPage} from "../pages/type/prdetail/prdetail";
 import {HttpModule} from "@angular/http";
 import {LongingPage} from "../pages/mycake/longing/longing";
+import {UcenterPage} from "../pages/about/ucenter/ucenter";
+import {Ucenter2Page} from "../pages/about/ucenter2/ucenter2";
+import {Ucenter3Page} from "../pages/about/ucenter3/ucenter3";
+import {Ucenter4Page} from "../pages/about/ucenter4/ucenter4";
+import {Ucenter5Page} from "../pages/about/ucenter5/ucenter5";
+import {Ucenter6Page} from "../pages/about/ucenter6/ucenter6";
+import {Ucenter7Page} from "../pages/about/ucenter7/ucenter7";
+import {Ucenter8Page} from "../pages/about/ucenter8/ucenter8";
+import {Ucenter9Page} from "../pages/about/ucenter9/ucenter9";
+import {Ucenter10Page} from "../pages/about/ucenter10/ucenter10";
+import {Ucenter11Page} from "../pages/about/ucenter11/ucenter11";
+import {Ucenter12Page} from "../pages/about/ucenter12/ucenter12";
+import {Ucenter13Page} from "../pages/about/ucenter13/ucenter13";
+import {Ucenter14Page} from "../pages/about/ucenter14/ucenter14";
+import {Ucenter15Page} from "../pages/about/ucenter15/ucenter15";
+import {Ucenter16Page} from "../pages/about/ucenter16/ucenter16";
 
 @NgModule({
   declarations: [
@@ -38,11 +54,26 @@ import {LongingPage} from "../pages/mycake/longing/longing";
     ChangePage,
     ChangepassPage,
     RegisterPage,
-    LongingPage
+    LongingPage,
+    UcenterPage,
+    Ucenter2Page,
+    Ucenter3Page,
+    Ucenter4Page,
+    Ucenter5Page,
+    Ucenter6Page,
+    Ucenter7Page,
+    Ucenter8Page,
+    Ucenter9Page,
+    Ucenter10Page,
+    Ucenter11Page,
+    Ucenter12Page,
+    Ucenter13Page,
+    Ucenter14Page,
+    Ucenter15Page,
+    Ucenter16Page,
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -62,7 +93,23 @@ import {LongingPage} from "../pages/mycake/longing/longing";
     ChangePage,
     ChangepassPage,
     RegisterPage,
-    LongingPage
+    LongingPage,
+    UcenterPage,
+    Ucenter2Page,
+    Ucenter3Page,
+    Ucenter4Page,
+    Ucenter5Page,
+    Ucenter6Page,
+    Ucenter7Page,
+    Ucenter8Page,
+    Ucenter9Page,
+    Ucenter10Page,
+    Ucenter11Page,
+    Ucenter12Page,
+    Ucenter13Page,
+    Ucenter14Page,
+    Ucenter15Page,
+    Ucenter16Page,
   ],
   providers: [
     StatusBar,
