@@ -10,7 +10,13 @@ import { ShoppingPage } from '../pages/shopping/shopping';
 import { MycakePage } from '../pages/mycake/mycake';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {ProductPage} from "../pages/type/product/product";
+import {FindPage} from "../pages/mycake/find/find";
+import {LongingPage} from "../pages/mycake/longing/longing";
+import {AdressPage} from "../pages/mycake/longing/adress/adress";
+import {ChangepassPage} from "../pages/mycake/longing/changepass/changepass";
+import {ChangePage} from "../pages/mycake/longing/change/change";
+import {LinkmanPage} from "../pages/mycake/longing/linkman/linkman";
+import {RegisterPage} from "../pages/mycake/register/register";
 
 @NgModule({
   declarations: [
@@ -21,7 +27,14 @@ import {ProductPage} from "../pages/type/product/product";
     TabsPage,
     ShoppingPage,
     MycakePage,
-    ProductPage
+    FindPage,
+    LongingPage,
+    AdressPage,
+    ChangepassPage,
+    ChangePage,
+    LinkmanPage,
+    RegisterPage,
+    FindPage
   ],
   imports: [
     BrowserModule,
@@ -36,6 +49,14 @@ import {ProductPage} from "../pages/type/product/product";
     TabsPage,
     ShoppingPage,
     MycakePage,
+    FindPage,
+    LongingPage,
+    AdressPage,
+    ChangepassPage,
+    ChangePage,
+    LinkmanPage,
+    RegisterPage,
+    FindPage
   ],
   providers: [
     StatusBar,
