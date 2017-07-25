@@ -8,10 +8,10 @@
         <button (click)="address()">+添加收货人地址</button>
       </div>
       <div class="link-alladress">
-        <ul *ngFor="let a of adress">
-          <li class="ulli1">{{a.rsvname}}&nbsp;&nbsp;{{a.rsvphone}}</li>
-          <li class="ulli2">{{a.adres}}</li>
-          <li class="ulli3"><input type="checkbox"><button (click)="changeadress(a)">修改</button><button (click)="radress(a)">删除</button></li>
+        <ul class="linkul" *ngFor="let a of adress">
+          <li class="ulli1 linkli" col-12>{{a.rsvname}}&nbsp;&nbsp;{{a.rsvphone}}</li>
+          <li class="ulli2 linkli" col-12>{{a.adres}}</li>
+          <li class="ulli3 linkli" col-12><input type="checkbox"><button (click)="changeadress(a)">修改</button><button (click)="radress(a)">删除</button></li>
         </ul>
       </div>
 </ion-content>

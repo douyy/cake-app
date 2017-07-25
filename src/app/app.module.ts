@@ -19,6 +19,7 @@ import {ChangepassPage} from "../pages/mycake/longing/changepass/changepass";
 import {RegisterPage} from "../pages/mycake/register/register";
 import {PrdetailPage} from "../pages/type/prdetail/prdetail";
 import {HttpModule} from "@angular/http";
+import {LongingPage} from "../pages/mycake/longing/longing";
 
 @NgModule({
   declarations: [
@@ -36,10 +37,12 @@ import {HttpModule} from "@angular/http";
     AdressPage,
     ChangePage,
     ChangepassPage,
-    RegisterPage
+    RegisterPage,
+    LongingPage
   ],
   imports: [
-    BrowserModule,HttpModule,
+    BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -58,7 +61,8 @@ import {HttpModule} from "@angular/http";
     AdressPage,
     ChangePage,
     ChangepassPage,
-    RegisterPage
+    RegisterPage,
+    LongingPage
   ],
   providers: [
     StatusBar,
