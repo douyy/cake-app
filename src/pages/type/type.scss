@@ -1,3 +1,12 @@
 page-contact {
-
+  *{
+    margin:0;
+    padding:0;
+  }
+  .row ion-col{
+    text-align: center;
+  }
+  .row ion-col img{
+    width:50%;
+  }
 }

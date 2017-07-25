@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {Http} from "@angular/http";
 import {ChangePage} from "./change/change";
 import {ChangepassPage} from "./changepass/changepass";
-import {AdressPage} from "./adress/adress";
 import {LinkmanPage} from "./linkman/linkman";
-import {HomePage} from "../../home/home";
 import {MycakePage} from "../mycake";
 
 @Component({
@@ -13,9 +11,12 @@ import {MycakePage} from "../mycake";
   templateUrl: 'longing.html'
 })
 export class LongingPage{
-  phone =  localStorage.getItem('userphone');
+  phone;
   user;
   constructor(public navCtrl: NavController,public http:Http) {
+  }
+  ionViewWillEnter(){
+    this.phone =  localStorage.getItem('userphone');
     console.log(this.phone);
     if (!this.phone){
       alert("请先登录")
@@ -23,6 +24,7 @@ export class LongingPage{
       console.log(this.phone);
     }
   }
+
   informate(){
     console.log(this.phone)
     return this.http.post('http://localhost:3000/s/userphone',{phone:this.phone}).toPromise()
@@ -39,8 +41,8 @@ export class LongingPage{
   changepass(){this.navCtrl.push(ChangepassPage);}
   addadress(){this.navCtrl.push(LinkmanPage);}
   quirt(){
-    localStorage.removeItem('userphone');
+    localStorage.removeItem('userphone')
     console.log(this.phone);
-    this.navCtrl.push(HomePage);
+    this.navCtrl.parent.select(0);
   }
 }

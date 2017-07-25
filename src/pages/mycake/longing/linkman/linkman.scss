@@ -26,6 +26,11 @@ page-about {
   .link-alladress ul:first-child li.ulli3 button:last-child{
     display: none;
   }
+  .link-alladress ul li.ulli3 input{
+    width: 20px;
+    height: 20px;
+    color: red;
+  }
   .link-alladress ul li.ulli3 button{
     float: right;
     background-color: #f1f1f5;
