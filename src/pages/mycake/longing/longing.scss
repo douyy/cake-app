@@ -44,7 +44,7 @@ page-about {
     height: 60px;
   }
   div.top .ion-jf,.ion-hb{
-    width: 168px;
+    width: 44%;
     height: 30px;
     border-radius:10px;
     float: left;
@@ -112,7 +112,6 @@ page-about {
   }
   div.ion-xinxi ul.lgul li.lgli div.ion-img{
     height: 50px;
-    margin-right: 10px;
     float: right;
     border-bottom: 1px solid #e2e2e2;
   }
@@ -120,9 +119,10 @@ page-about {
     float: right;
     height: 42px;
     width: 30px;
+    margin-right: 10px;
   }
   div.ion-xinxi ul.lgul li.lgli div.ion-img h4{
-    width: 200px;
+    width: 60%;
     line-height: 40px;
   }
   div.ion-xinxi ul.lgul li.lgli:last-child div.ion-img{
