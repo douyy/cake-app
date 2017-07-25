@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { NavController} from 'ionic-angular';
 import {RegisterPage} from "./register/register";
 import {FindPage} from "./find/find";
 import {Http} from "@angular/http";

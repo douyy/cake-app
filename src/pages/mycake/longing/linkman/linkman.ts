@@ -36,6 +36,7 @@ export class LinkmanPage {
       console.log(body)
       if(body.success){
         alert('删除成功')
+        this.navCtrl.push(LinkmanPage)
       }else{
         console.log(body.data);
       }

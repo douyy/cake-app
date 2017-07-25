@@ -15,11 +15,14 @@
     </div>
     <div class="ion-ipt">
       <span col-4>您的性别</span>
-      <input col-8 type="text">
+      <span>
+        <input type="radio" value="u.male" checked="checked" name="hsex">男
+        <input type="radio" value="u.fmale" name="hsex">女
+      </span>
     </div>
     <div class="ion-ipt">
       <span col-4>您的邮箱</span>
-      <input col-8 type="text">
+      <input col-8 type="email">
     </div>
     <div class="ion-ipt">
       <span col-4>您的手机</span>
@@ -31,7 +34,7 @@
       <input col-8 type="text" value="{{u.address}}" [(ngModel)]="u.address">
     </div>
     <div padding>
-      <button ion-button color="light" block (click)="change(u);">修 改</button>
+      <button ion-button color="danger" block (click)="change(u);">修 改</button>
     </div>
   </div>
 </ion-content>
