@@ -19,7 +19,6 @@ export class HomePage {
   cc:string;
   // searchQuery: string = '';
   // items: string[];
-
   //轮播
   @ViewChild('ionSlides') slides;
 
