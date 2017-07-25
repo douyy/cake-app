@@ -85,7 +85,7 @@
       </ion-row>
     </ion-grid>
     <!--列表-->
-    <ion-row class="list" *ngIf="cake != []">
+    <ion-row class="list" *ngIf="cakelen > 0">
       <ion-col *ngFor="let c of cake" col-6>
          <div>
              <img src="{{c.url}}" alt="" (click)="detail(c)">
@@ -93,14 +93,14 @@
              <p>{{c.introduce}}</p>
              <p>
                <span class="price">¥{{c.price}}</span>
-               <ion-icon name="ios-cart-outline" class="ionc"></ion-icon>
+               <ion-icon name="ios-cart-outline" class="ionc" (click)="goshopping(c.cakeid)"></ion-icon>
                <button ion-button outline class="goumai">购买</button>
              </p>
          </div>
       </ion-col>
     </ion-row>
     <!--无-->
-    <ion-row *ngIf="cake == []">
+    <ion-row *ngIf="cakelen == 0">
       <ion-col class="wu">没有你搜索的蛋糕，请换个条件。。。</ion-col>
     </ion-row>
     <!--分页-->

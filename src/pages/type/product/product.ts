@@ -3,6 +3,7 @@ import {NavController, NavParams} from 'ionic-angular';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {PrdetailPage} from "../prdetail/prdetail";
+import {MycakePage} from "../../mycake/mycake";
 
 @Component({
   selector: 'page-contact',
@@ -140,6 +141,7 @@ export class ProductPage implements OnInit{
   }
   total:number;
   size:number;
+  cakelen:number;
   //搜索请求数据库
   soso(aa,page){
     // console.log(aa);
@@ -149,6 +151,7 @@ export class ProductPage implements OnInit{
       this.cake = data.results;
       this.total = data.total;
       this.size = data.size;
+      this.cakelen = this.cake.length;
     })
       .catch(this.handleError);
   }
@@ -187,5 +190,15 @@ export class ProductPage implements OnInit{
   prev(){
     this.index --;
     this.soso(this.newcondition,this.index);
+  }
+  //购物车
+  phone:string;
+  goshopping(cakeid){
+    this.phone = localStorage.getItem('userphone');
+    if(this.phone == null){
+      this.navCtrl.push(MycakePage);
+    }else{
+      console.log(1);
+    }
   }
 }

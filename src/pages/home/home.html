@@ -40,7 +40,7 @@
   <ion-grid class="cake">
     <ion-row>
       <ion-col col-3>
-        <div>
+        <div (click)="goProduct('蛋糕')">
           <img src="../../assets/images/cake.png">
           <p>蛋糕</p>
         </div>
@@ -92,15 +92,14 @@
       <div class="further">更多>></div>
       <div class="xian" col-12></div>
       <ul>
-        <li class="product" *ngFor="let c of getType(t.classify)" col-6>
-          <img src="{{c.url}}" alt="" class="productImg">
+        <li class="product" *ngFor="let c of getType(t.classify)" col-6 >
+          <img src="{{c.url}}" alt="" class="productImg" (click)="godetail(c)">
           <img src="./assets/images/hot_rm.png" *ngIf="c.ishot" class="hot">
           <img src="./assets/images/hot_tj.png" *ngIf="c.iste" class="hot">
           <img src="./assets/images/hot_xp.png" *ngIf="c.isnew" class="hot">
-          <p>{{c.name
-
-            }}</p>
+          <p>{{c.name}}</p>
           <p>{{c.introduce}}</p>
+
           <p>￥{{c.price}}
             <img src="./assets/images/cartico0.png" class="cart" (click)="cart(c)">
             <span>购买</span>

@@ -3,7 +3,8 @@ import {NavController} from "ionic-angular";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
 import {TypePage} from "../type/type";
-import {ShoppingPage} from "../shopping/shopping";
+import {PrdetailPage} from "../type/prdetail/prdetail";
+import {ProductPage} from "../type/product/product";
 
 @Component({
   selector: 'page-home',
@@ -57,7 +58,12 @@ export class HomePage {
   many(){
     this.navCtrl.push(TypePage);
   }
-
+  goProduct(type){
+    this.navCtrl.push(ProductPage,{type:type});
+  }
+  godetail(path){
+    this.navCtrl.push(PrdetailPage,{path:path});
+  }
   cart(c){
     this.cak = JSON.parse(localStorage.getItem('cc'));
     this.cak.push(c);
