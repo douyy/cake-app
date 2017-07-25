@@ -104,7 +104,7 @@
       <ion-col class="wu">没有你搜索的蛋糕，请换个条件。。。</ion-col>
     </ion-row>
     <!--分页-->
-    <ion-row *ngIf="total > 6">
+    <ion-row *ngIf="total > 6" class="page">
       <ion-col>
         <button ion-button color="danger" round (click)="prev()" [disabled]="index == 1">上一页</button>
         <button ion-button color="danger" round (click)="next()" [disabled]="index * size >= total">下一页</button>

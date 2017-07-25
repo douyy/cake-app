@@ -95,7 +95,7 @@
     <div class="head" *ngFor="let t of type">
       <div class="A">{{t.letter}}</div>
       <div class="title">{{t.classify}}</div>
-      <div class="further">更多>></div>
+      <div class="further" (click)="goProduct('蛋糕')">更多>></div>
       <div class="xian" col-12></div>
       <ul>
         <li class="product" *ngFor="let c of getType(t.classify)" col-6 >

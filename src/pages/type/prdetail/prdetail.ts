@@ -28,7 +28,7 @@ export class PrdetailPage {
       public navCtrl: NavController,
       public navParams:NavParams,
       public actionSheetCtrl: ActionSheetController,
-      public http:Http
+      public http:Http,
   ) {
       this.detail = this.navParams.data.path;
       this.chicun = false;

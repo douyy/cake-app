@@ -128,25 +128,4 @@ export class HomePage {
   ionViewDidLeave() {
     this.slides.stopAutoplay();
   }
-
-
-//   initializeItems() {
-//     this.items = [
-//       '生日蛋糕',
-//       '祝寿蛋糕',
-//       '庆典蛋糕',
-//     ];
-//   }
-//
-//   getItems(ev: any) {
-//     this.initializeItems();
-//
-//     let val = ev.target.value;
-//
-//     if (val && val.trim() != '') {
-//       this.items = this.items.filter((item) => {
-//         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-//       })
-//     }
-//   }
 }
