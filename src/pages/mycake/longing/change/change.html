@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>我的七彩</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <div class="ion-body" style="margin-top: 5px;" *ngFor="let u of updateuser">
+      <div class="ion-ipt">
+        <span col-4>用户名</span>
+        <input col-8 type="text" value="{{u.phone}}" readonly>
+      </div>
+    <div class="ion-ipt">
+      <span col-4>您的姓名</span>
+      <input col-8 type="text" value="{{u.name}}" [(ngModel)]="u.name">
+    </div>
+    <div class="ion-ipt">
+      <span col-4>您的性别</span>
+      <span>
+        <input type="radio" value="u.male" checked="checked" name="hsex">男
+        <input type="radio" value="u.fmale" name="hsex">女
+      </span>
+    </div>
+    <div class="ion-ipt">
+      <span col-4>您的邮箱</span>
+      <input col-8 type="email">
+    </div>
+    <div class="ion-ipt">
+      <span col-4>您的手机</span>
+      <input col-4 type="text" value="{{u.phone}}" [(ngModel)]="u.phone">
+      <button col-4>发送验证码</button>
+    </div>
+    <div class="ion-ipt ion-lastipt">
+      <span col-4>您的地址</span>
+      <input col-8 type="text" value="{{u.address}}" [(ngModel)]="u.address">
+    </div>
+    <div padding>
+      <button ion-button color="danger" block (click)="change(u);">修 改</button>
+    </div>
+  </div>
+</ion-content>
+

@@ -1,0 +1,44 @@
+page-home {
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .ion-ipt{
+    background-color: white;
+    padding: 10px 10px;
+  }
+  .ion-ipt .ion-cur2{
+    border:1px solid #e2e2e2;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 3px;
+    margin-top: 10px;
+    border-radius:10px;
+  }
+  .ion-ipt .ion-cur2 input,.ion-te .button input{
+    height: 30px;
+    border:none;
+    width: 80%;
+  }
+  /*短信*/
+  .ion-te{
+    height: 40px;
+    font-size: 16px;
+    padding: 3px;
+    margin: 10px auto;
+  }
+  .ion-te .button{
+    float: left;
+    height: 38px;
+    border:1px solid #e2e2e2;
+    border-radius: 8px;
+  }
+  .ion-te button{
+    float: right;
+    height: 38px;
+    border:1px solid #e2e2e2;
+    border-radius: 8px;
+    color: white;
+  }
+}

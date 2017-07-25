@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>我的七彩</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="ion-adress" style="margin-top: 5px;">
+    <div class="ion-ipt">
+      <span col-4>收货人姓名</span>
+      <input col-8 type="text" placeholder="收货人姓名" [(ngModel)]="rsv.rsvname">
+    </div>
+    <div class="ion-ipt">
+      <span col-4>收货人电话</span>
+      <input col-8 type="text" placeholder="收货人电话" [(ngModel)]="rsv.rsvphone">
+    </div>
+    <div class="ion-ipt">
+      <span col-4>收货省</span>
+      <input col-8 type="text">
+    </div>
+    <div class="ion-ipt">
+      <span col-4>收货市</span>
+      <input col-8 type="text">
+    </div>
+    <div class="ion-ipt">
+      <span col-4>收货区县</span>
+      <input col-8 type="text">
+    </div>
+    <div class="ion-ipt ion-last">
+      <span col-4>收货人地址</span><br>
+      <textarea id="" cols="40" rows="2" [(ngModel)]="rsv.adres"></textarea>
+    </div>
+  </div>
+  <div padding>
+  <button ion-button color="danger" block (click)="change(rsv);">保 存 修 改</button>
+</div>
+</ion-content>
+

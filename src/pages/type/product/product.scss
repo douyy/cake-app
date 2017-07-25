@@ -1,0 +1,144 @@
+page-contact {
+  .con nav{
+    margin-left:10px;
+    margin-top:10px;
+    overflow: hidden;
+  }
+  ul{
+    list-style: none;
+    margin-top:5px;
+  }
+  .con ul li{
+    float: left;
+    height:25px;
+    text-align: center;
+    line-height:25px;
+  }
+  .xuan{
+    margin:10px 0 0 10px;
+  }
+  .con span,.xuan span{
+    padding:3px 8px;
+  }
+  .con ul li span:first-child{
+    margin-left:2px;
+  }
+  .con ul span.xian{
+    padding:0;
+    width:2%;
+    height:22px;
+    color: #bbb;
+  }
+  .con ul span.current,.xuan span{
+    background-color: #f15352;
+    border-radius:20px;
+    color: #ffffff;
+  }
+  .xuan span{
+    margin-right:5px;
+  }
+  .con .button-ios,.con .button-md{
+    height:35px;
+    padding:0 4em;
+  }
+  .con .more{
+    color: red;
+    margin-left:5px;
+  }
+  .btn{
+    width:100%;
+    text-align: center;
+  }
+  ion-grid.shai{
+    color: red;
+    font-size:15px;
+  }
+  ion-grid.shai .xian{
+    position: relative;
+    overflow: hidden;
+  }
+  ion-grid.shai .xian p{
+    width:100%;
+    border-top:1px solid red;
+    position: absolute;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .list{
+    background-color: #f4f4f4;
+  }
+  .zonghe .row{
+    border:1px solid red;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size:17px;
+    margin-top:8px;
+  }
+  .xuan2{
+    background-color: #f0282d;
+    color: #fff;
+  }
+  .list ion-col div{
+    background-color: #fff;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+  }
+  .list ion-col div img{
+    width:100%;
+  }
+  .list ion-col div p{
+    text-align: left;
+    padding-left:7px;
+  }
+  .list ion-col div p span.price{
+    color: red;
+    font-size:17px;
+    font-weight:600;
+  }
+  ion-icon{
+    font-size: 1.8em;
+  }
+  .goumai{
+    height:2em;
+    font-size:1.2rem;
+  }
+  .button-outline-ios,.button-outline-md{
+    color: #348B16;
+    border-color: #348B16;
+  }
+  .list ion-col div p:last-child{
+    overflow: hidden;
+    height:40px;
+    line-height:40px;
+    position: relative;
+  }
+  .list ion-col div p:last-child ion-icon{
+    position: absolute;
+    top:50%;
+    left:40%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .list ion-col div p:last-child button{
+    position: absolute;
+    left:60%;
+    margin-top:9px;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: red;
+  }
+  .wu{
+    font-size:16px;
+    height:20px;
+    margin-top:20px;
+  }
+}

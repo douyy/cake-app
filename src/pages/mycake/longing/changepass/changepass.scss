@@ -1,0 +1,26 @@
+page-home {
+  .ion-body{
+    width: 90%;
+    height: 300px;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  .ion-body .ion-ipt{
+    height: 50px;
+    font-size: 16px;
+    border-bottom: 1px solid #e2e2e2;
+    padding-top: 10px;
+  }
+  .ion-body .ion-lastipt{
+    border-bottom:none;
+  }
+  .ion-body .ion-ipt input{
+    border:none;
+    outline:none;
+  }
+  .changepass-body{
+    height: 240px;
+  }
+}

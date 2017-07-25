@@ -1,0 +1,126 @@
+page-about {
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .ion-con{
+    width: 100%;
+    height: 600px;
+    background-color: #ededed;
+  }
+  ul{
+    list-style: none;
+  }
+  div.top{
+    background: url("../../../assets/images/usercenter_top_bg.png");
+    width: 100%;
+    padding: 10px;
+    height: 148px;
+  }
+  div.top img{
+    float: left;
+    width: 75px;
+    height: 75px;
+  }
+  div.top .ion-p{
+    height: 40px;
+  }
+  div.top p{
+    float: left;
+    font-size: 18px;
+    padding-left: 10px;
+    color: white;
+    margin-top: 30px;
+  }
+  div.top p span{
+    float: right;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../../../assets/images/edituser.png")no-repeat;
+    background-size: 20px 20px;
+  }
+  div.top .ion-jfhb{
+    height: 60px;
+  }
+  div.top .ion-jf,.ion-hb{
+    width: 168px;
+    height: 30px;
+    border-radius:10px;
+    float: left;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    background-color: #f5be01;
+  }
+  div.top .ion-hb{
+    float: right;
+    background-color: #ff8448;
+  }
+  div.shopping{
+    background-color: white;
+    height: 100px;
+  }
+  div.shopping ul li{
+    float: left;
+    height: 80px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    color: gray;
+    position: relative;
+    border-right:1px solid #e2e2e2;
+  }
+  div.shopping ul li.te3{
+    border-right:none;
+  }
+  div.shopping ul li:before{
+    position: relative;
+    display: block;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    left: 30px;
+    background: url("../../../assets/images/dfk.png");
+    background-size: 40px 40px;
+  }
+  div.shopping ul li.te2:before{
+    background: url("../../../assets/images/wcdd.png");
+    background-size: 40px 40px;
+  }
+  div.shopping ul li.te3:before{
+    background: url("../../../assets/images/qbdd.png");
+    background-size: 40px 40px;
+  }
+  div.ion-xinxi ul{
+    width: 100%;
+    height: 153px;
+    margin-top: 20px;
+    background-color: white;
+  }
+  div.ion-xinxi ul li img,div.ion-xinxi ul li div.ion-img h4{
+    float: left;
+  }
+  div.ion-xinxi ul li img{
+    height: 50px;
+    width: 50px;
+  }
+  div.ion-xinxi ul li div.ion-img img{
+    float: right;
+    height: 42px;
+    width: 30px;
+  }
+  div.ion-xinxi ul li div.ion-img{
+    height: 50px;
+    margin-right: 10px;
+    float: right;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  div.ion-xinxi ul li div.ion-img h4{
+    line-height: 40px;
+  }
+  div.ion-xinxi ul li:last-child div.ion-img{
+    border-bottom: none;
+  }
+}
