@@ -1,5 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, Slides,ActionSheetController} from 'ionic-angular';
+import {Component, ViewChild, NgZone} from '@angular/core';
+import {NavController, NavParams, Slides,ActionSheetController,Content} from 'ionic-angular';
 import {Http} from "@angular/http";
 
 @Component({
@@ -21,14 +21,18 @@ export class PrdetailPage {
   discuss:string[];
   items: string[];
   itemseach:string[];
+  mess:boolean;
+  topshow:boolean;
 
   @ViewChild(Slides) slides:Slides;
+  @ViewChild(Content) content:Content;
 
   constructor(
       public navCtrl: NavController,
       public navParams:NavParams,
       public actionSheetCtrl: ActionSheetController,
-      public http:Http
+      public http:Http,
+      public zone:NgZone
   ) {
       this.detail = this.navParams.data.path;
       this.chicun = false;
@@ -164,5 +168,27 @@ export class PrdetailPage {
       title:'啦啦啦啦',
     });
     actionSheet.present();
+  }
+
+  //回到顶部
+  scrollTo(){
+    this.content.scrollTo(0,0,200);
+  }
+  scrollHandle(event){
+    this.zone.run(()=>{
+      if(event.scrollTop > 100){
+        this.topshow = true;
+      }else{
+        this.topshow = false;
+      }
+    });
+  }
+
+  //微信
+  weixin(){
+    this.mess = true;
+  }
+  close(){
+    this.mess = false;
   }
 }

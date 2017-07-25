@@ -24,4 +24,16 @@
   <p>2、积分是按您购物金额计算，即1元换算1个积分，虚拟货币是按积分的5%折算，即100个积分换算5元的虚拟货币。虚拟货币可在您下次购物时抵用相应的现金。抵用的部分不计入发票金额；不折合现金，只能于本网站使用。</p>
   <button class="buttonzhm1"><a href="tel:400-658-1177">服务热线:400-658-1177</a></button>
   <button class="buttonzhm2">客服QQ:139 010 678</button>
+
+  <div class="image">
+    <img src="./assets/images/xf_wx.png" (click)="weixin()"><br>
+    <div class="message" *ngIf="mess">
+      <p>亲爱的主人</p>
+      <p>加微信公众号：<span>七彩蛋糕客服</span></p>
+      <p>可以直接和我对话</p>
+      <p>更好的为您服务</p>
+      <div class="close" (click)="close()">关闭</div>
+    </div>
+    <img src="./assets/images/xf_kf.png"><br>
+  </div>
 </ion-content>
