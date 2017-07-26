@@ -22,14 +22,14 @@
   <!--轮播-->
   <div class="homelun">
     <ion-slides pager #ionSlides loop="true" autoplay="3000">
-      <ion-slide>
+      <ion-slide (click)="lungo(cake[25])">
         <img src="https://www.dangao.com/imgbanner/m_banner1.jpg">
       </ion-slide>
-      <ion-slide>
+      <ion-slide (click)="lungo(cake[4])">
         <img src="https://www.dangao.com/imgbanner/m_banner6.jpg">
       </ion-slide>
 
-      <ion-slide>
+      <ion-slide (click)="lungo(cake[3])">
         <img src="https://www.dangao.com/imgbanner/m_banner4.jpg
 
   ">
@@ -107,7 +107,7 @@
           <p>{{c.introduce}}</p>
 
           <p>￥{{c.price}}
-            <img src="./assets/images/cartico0.png" class="cart" (click)="cart(c)">
+            <img src="./assets/images/cartico0.png" class="cart" (click)="cart(c.cakeid)">
             <span>购买</span>
           </p>
           <li>

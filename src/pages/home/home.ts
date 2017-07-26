@@ -51,15 +51,13 @@ export class HomePage {
         var data = res.json().data;
         console.log(data);
         this.cake = data;
-        return data;
       });
 
     http.get('http://localhost:3000/cake/type').toPromise()
       .then(res=>{
         var data = res.json().data;
-        console.log(data);
+        // console.log(data);
         this.type = data;
-        return data;
       });
 
   }
@@ -78,9 +76,6 @@ export class HomePage {
   }
 
   getItems(ev: any) {
-    // Reset items back to all of the items
-
-    // set val to the value of the searchbar
     let val = ev.target.value;
 
     // if the value is an empty string don't filter the items
@@ -121,21 +116,18 @@ export class HomePage {
   }
 
   cart(c){
-    console.log(c.cakeid);
     this.phone =  localStorage.getItem('userphone');
     if(this.phone == ''){
      this.navCtrl.push(LongingPage);
-   }else{
-      this.http.post('http://localhost:3000/cake',{c:c.cakeid,phone:this.phone}).toPromise()
-        .then(res=>{
-          var data = res.json().data;
-          console.log(data);
-          this.carts = data;
-          return data;
-        });
+     }else{
+        this.http.post('http://localhost:3000/cake',{cakeid:c,phone:this.phone}).toPromise()
+          .then(res=>{
+            var data = res.json();
+            if(data.success){
+              this.alert = true;
+            }
+          });
     }
-
-    this.alert = true;
     setTimeout(()=>{
       this.alert = false;
     },2000);
@@ -174,5 +166,9 @@ export class HomePage {
   }
   close(){
     this.mess = false;
+  }
+  //轮播跳转
+  lungo(path){
+    this.navCtrl.push(PrdetailPage,{path:path});
   }
 }

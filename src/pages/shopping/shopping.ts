@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import { NavController,ActionSheetController } from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {Http} from "@angular/http";
+import {ShoppingnumProvider} from "../../providers/shoppingnum/shoppingnum";
 
 @Component({
   selector: 'page-about',
@@ -9,25 +10,33 @@ import {Http} from "@angular/http";
 })
 export class ShoppingPage{
   cake:string[];
-  length:number;
-  number:number;
   total:number;
+  // dingdan:string[];
 
   constructor(public navCtrl: NavController,
               public http:Http,
-              public actionSheetCtrl: ActionSheetController) {
-    this.cake = [];
-    this.length = 1;
-     this.cake = JSON.parse(localStorage.getItem('cc'));
-     console.log(JSON.parse(localStorage.getItem('cc')));
-    // localStorage.removeItem('cc');
-    this.length = this.cake ? this.cake.length : 0;
-    this.number = 1;
-    console.log(this.cake);
+              public actionSheetCtrl: ActionSheetController,
+              public channum:ShoppingnumProvider,
+            ) {
     //搜索
     this.items = [];
     this.itemseach = [];
     this.initializeItems();
+  }
+  //购物车
+  length:number;
+  initgodingdan(){
+    this.total = 0;
+    this.http.get('http://localhost:3000/cake/cart',{params:{userphone:this.channum.phone}})
+      .toPromise().then(res=>{
+        var data = res.json().data;
+        this.cake = data;
+        // console.log(this.cake);
+        for(var i = 0; i < this.cake.length;i++){
+          this.total += this.cake[i]['num'] * parseInt(this.cake[i]['price']);
+        }
+        this.length = this.cake.length;
+    })
   }
   //搜索
   items:string[];
@@ -68,40 +77,43 @@ export class ShoppingPage{
   main(){
     this.navCtrl.push(HomePage);
   }
-
-//  删除商品
-  remove(name:string){
+  //进入页面请求
+  ionViewDidEnter(){
+    this.initgodingdan();
+  }
+  //  删除商品
+  remove(id:string){
     alert('确定要删除？');
-    let index = this.cake.indexOf(name);
-    this.cake.splice(index,1);
-    console.log(this.cake);
-    localStorage.removeItem('cc');
+    this.http.delete('http://localhost:3000/cake/cart',{params:{cakeid:id,phone:this.channum.phone}}).toPromise()
+      .then(res=>{
+          var data = res.json();
+          if(data.success){
+            this.initgodingdan();
+          }
+      })
   }
-
-//  数量增加
-  add(price:number){
-    this.number++;
-    this.total = price * this.number;
-  }
-//  数量减少
-  subtract(price:number){
-    if(this.number == 1){
-      this.number = 1;
-    }else{
-      this.number--;
-      this.total = price * this.number;
+  //
+  //  数量增加
+    add(cakeid:number,num:number,price:string){
+      num++;
+      this.channum.numchange(cakeid,num).then((res)=>{
+          if(res.success){
+            this.initgodingdan();
+          }
+      })
     }
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TestPage');
-
-    this.cake = JSON.parse(localStorage.getItem('cc'));
-    console.log(JSON.parse(localStorage.getItem('cc')));
-    // localStorage.removeItem('cc');
-    this.length = this.cake ? this.cake.length : 0;
-    this.number = 1;
-    console.log(this.cake);
-  }
+  //  数量减少
+    subtract(cakeid:number,num:number,price:string){
+      if(num == 1){
+        num = 1;
+      }else{
+         num--;
+        this.channum.numchange(cakeid,num).then((res)=>{
+          if(res.success){
+            this.initgodingdan();
+          }
+        })
+      }
+    }
 
 }

@@ -36,6 +36,7 @@ import {Ucenter13Page} from "../pages/about/ucenter13/ucenter13";
 import {Ucenter14Page} from "../pages/about/ucenter14/ucenter14";
 import {Ucenter15Page} from "../pages/about/ucenter15/ucenter15";
 import {Ucenter16Page} from "../pages/about/ucenter16/ucenter16";
+import { ShoppingnumProvider } from '../providers/shoppingnum/shoppingnum';
 
 @NgModule({
   declarations: [
@@ -114,7 +115,8 @@ import {Ucenter16Page} from "../pages/about/ucenter16/ucenter16";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ShoppingnumProvider
   ]
 })
 export class AppModule {}
