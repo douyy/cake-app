@@ -121,6 +121,7 @@ import {ShoppingnumProvider} from "../providers/shoppingnum/shoppingnum";
     SplashScreen,
     ShoppingnumProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+
   ]
 })
 export class AppModule {}
