@@ -78,8 +78,10 @@ export class ShoppingPage{
     this.navCtrl.push(HomePage);
   }
   //进入页面请求
+  size:any;
   ionViewDidEnter(){
     this.initgodingdan();
+    this.size = localStorage.getItem('size');
   }
   //  删除商品
   remove(id:string){

@@ -94,7 +94,7 @@
              <p>
                <span class="price">¥{{c.price}}</span>
                <ion-icon name="ios-cart-outline" class="ionc" (click)="goshopping(c.cakeid)"></ion-icon>
-               <button ion-button outline class="goumai">购买</button>
+               <button ion-button outline class="goumai" (click)="detail(c)">购买</button>
              </p>
          </div>
       </ion-col>
@@ -123,6 +123,7 @@
     <img src="./assets/images/xf_kf.png"><br>
     <img src="./assets/images/scroll-to-top-icon.png" (click)="scrollTo()" *ngIf="topshow">
   </div>
+  <div class="alert" *ngIf="alert">加入购物车成功</div>
 </ion-content>
 
 

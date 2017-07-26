@@ -2,6 +2,7 @@ import {Component, ViewChild, NgZone} from '@angular/core';
 import {NavController, NavParams, Slides,ActionSheetController,Content} from 'ionic-angular';
 import {Http} from "@angular/http";
 import {BuyPage} from "../buy/buy";
+import {LongingPage} from "../../mycake/longing/longing";
 
 @Component({
   selector: 'page-contact',
@@ -47,6 +48,7 @@ export class PrdetailPage {
       this.items = [];
       this.itemseach = [];
       this.initializeItems();
+      this.alert = false;
 
       //tabs
       let elements = document.querySelectorAll(".tabbar");
@@ -65,14 +67,14 @@ export class PrdetailPage {
       })
   }
   //隐藏tabs
-  // ionViewWillLeave() {
-  //   let elements = document.querySelectorAll(".tabbar");
-  //   if (elements != null) {
-  //     Object.keys(elements).map((key) => {
-  //       elements[key].style.display = 'flex';
-  //     });
-  //   }
-  // }
+  ionViewWillLeave() {
+    let elements = document.querySelectorAll(".tabbar");
+    if (elements != null) {
+      Object.keys(elements).map((key) => {
+        elements[key].style.display = 'flex';
+      });
+    }
+  }
   //轮播
   goToSlide(){
     this.slides.slideTo(2,500);
@@ -129,15 +131,25 @@ export class PrdetailPage {
   }
 
   //加入购物车
-  join(cake){
-    console.log(this.sizestr);
-    cake['size'] = this.sizestr;
-    cake['money'] = this.money;
-    this.joinarr.push(cake);
-    this.obj = JSON.stringify(this.joinarr);
-
-    localStorage.setItem('aa',this.obj);
-    this.dd = JSON.parse(localStorage.getItem('aa'));
+  alert:boolean;
+  size:any;
+  join(c){
+    this.phone =  localStorage.getItem('userphone');
+    this.size = localStorage.setItem('size',this.sizestr);
+    if(this.phone == ''){
+      this.navCtrl.push(LongingPage);
+    }else{
+      this.http.post('http://localhost:3000/cake',{cakeid:c,phone:this.phone}).toPromise()
+        .then(res=>{
+          var data = res.json();
+          if(data.success){
+            this.alert = true;
+          }
+        });
+    }
+    setTimeout(()=>{
+      this.alert = false;
+    },2000);
   }
   //搜索
   initializeItems() {

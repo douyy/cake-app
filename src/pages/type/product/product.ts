@@ -4,6 +4,7 @@ import {Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {PrdetailPage} from "../prdetail/prdetail";
 import {MycakePage} from "../../mycake/mycake";
+import {LongingPage} from "../../mycake/longing/longing";
 
 @Component({
   selector: 'page-contact',
@@ -42,6 +43,7 @@ export class ProductPage implements OnInit{
       this.num = 0;
       this.zong = '1';
       this.index = 1;
+      this.alert = false;
       //搜索
       this.items = [];
       this.itemseach = [];
@@ -203,16 +205,6 @@ export class ProductPage implements OnInit{
     this.index --;
     this.soso(this.newcondition,this.index);
   }
-  //购物车
-  phone:string;
-  goshopping(cakeid){
-    this.phone = localStorage.getItem('userphone');
-    if(this.phone == null){
-      this.navCtrl.push(MycakePage);
-    }else{
-      console.log(1);
-    }
-  }
 
   //回到顶部
   scrollTo(){
@@ -234,5 +226,25 @@ export class ProductPage implements OnInit{
   }
   close(){
     this.mess = false;
+  }
+  //购物车
+  phone:string;
+  alert:boolean;
+  goshopping(c){
+    this.phone =  localStorage.getItem('userphone');
+    if(this.phone == ''){
+      this.navCtrl.push(MycakePage);
+    }else{
+      this.http.post('http://localhost:3000/cake',{cakeid:c,phone:this.phone}).toPromise()
+        .then(res=>{
+          var data = res.json();
+          if(data.success){
+            this.alert = true;
+          }
+        });
+    }
+    setTimeout(()=>{
+      this.alert = false;
+    },2000);
   }
 }

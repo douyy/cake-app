@@ -49,7 +49,6 @@ export class HomePage {
     http.get('http://localhost:3000/cake').toPromise()
       .then(res => {
         var data = res.json().data;
-        console.log(data);
         this.cake = data;
       });
 
