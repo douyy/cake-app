@@ -1,0 +1,190 @@
+page-contact {
+  .order{
+    background-color: #f3f3f3;
+  }
+  .product{
+    width:100%;
+    height:139px;
+    padding-top:20px;
+    border-bottom:1px solid #ccc;
+    position: relative;
+    background-color: #fff;
+  }
+  .product img{
+    float:left;
+    width:72px;
+    height:72px;
+    border:1px solid #ccc;
+    margin-left:10px;
+  }
+  .product .wz{
+    height:139px;
+    float:left;
+    margin-left:10px;
+  }
+  .product .wz p{
+    line-height:23px;
+    font-size:14px;
+  }
+  .product .wz p.shu span{
+    width:30px;
+    height:24px;
+    border:1px solid #ccc;
+    display:inline-block;
+    text-align: center;
+  }
+  .product .right{
+    float:right;
+    margin-right:40px;
+  }
+  .product .right p{
+    color:#f00;
+    font-size:20px;
+    height:40px;
+  }
+  .product .xian{
+    width:100%;
+    border-bottom:1px solid #ccc;
+    position: absolute;
+    bottom:40px;
+  }
+  .product .total{
+    position: absolute;
+    bottom:0;
+    right:-40px;
+    background-color: #fff;
+    line-height:40px;
+  }
+  .product .total span{
+    color:#f00;
+  }
+  .product .right .trash{
+    color:#ccc;
+    margin-right:-20px;
+  }
+  .date{
+    height:42px;
+    width:100%;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    margin-top:20px;
+    background-color: #fff;
+  }
+  .date span{
+    display:inline-block;
+    line-height:42px;
+    margin-left:20px;
+  }
+  .date span input{
+    height:30px;
+    width:250px;
+    margin-left:20px;
+    outline:none;
+    border:none;
+  }
+  .gou{
+    width:100%;
+    height:84px;
+    background-color: #fff;
+    margin-top:20px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+  }
+  .gou p{
+    width:100%;
+    height:42px;
+    line-height:42px;
+    padding-left:20px;
+    font-size:15px;
+    color:#666;
+  }
+  .gou p:nth-child(1){
+    border-bottom: 1px dashed #ccc;
+  }
+  .gou span{
+    display:inline-block;
+    line-height:42px;
+    margin-left:20px;
+  }
+  .gou span input{
+    height:30px;
+    width:200px;
+    margin-left:20px;
+    outline:none;
+    border:none;
+  }
+  .gou .person{
+    margin-right:10px;
+    color: #ccc;
+    margin-top:5px;
+  }
+  .heka span input{
+    width:150px;
+  }
+  p.m{
+    color:#f00;
+  }
+  .juan{
+    height:200px;
+    background-color: #fff;
+  }
+  .submit{
+    height:38px;
+    width:90%;
+    background-color: #fd4848;
+    color:#fff;
+    text-align: center;
+    line-height: 38px;
+    margin-top:10px;
+    margin-left:20px;
+    border-radius: 5px;
+  }
+  .footer-ios .toolbar-background-ios,.footer-md .toolbar-background-md{
+    border:0;
+  }
+  .toolbar-ios,.toolbar-md{
+    padding:0;
+  }
+  ion-footer{
+    background-color: #fff;
+    position: fixed;
+    height:50px;
+    bottom: 0;
+  }
+  ion-footer .bottom li{
+    float: left;
+    height:50px;
+    font-size:12px;
+    width:16%;
+    text-align: center;
+  }
+  ion-footer .bottom li:first-child{
+    border-top:1px solid #dddddd;
+    border-right:1px solid #dddddd;
+  }
+  ion-footer .bottom li:nth-child(2){
+    border-top:1px solid #dddddd;
+    width:32%;
+    line-height:51px;
+    font-size:14px;
+  }
+  ion-footer .bottom li:nth-child(3),ion-footer .bottom li:nth-child(4){
+    width:26%;
+    height:100%;
+  }
+  ion-footer .bottom button{
+    width:100%;
+    height:50px;
+    color: #fff;
+    font-size:16px;
+  }
+  ion-footer .bottom li:nth-child(3) button{
+    background-color: #f15352;
+  }
+  ion-footer .bottom li img{
+    width:20px;
+    margin-top:3px;
+  }
+}
+
+

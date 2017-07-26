@@ -1,6 +1,7 @@
 import {Component, ViewChild, NgZone} from '@angular/core';
 import {NavController, NavParams, Slides,ActionSheetController,Content} from 'ionic-angular';
 import {Http} from "@angular/http";
+import {BuyPage} from "../buy/buy";
 
 @Component({
   selector: 'page-contact',
@@ -23,6 +24,7 @@ export class PrdetailPage {
   itemseach:string[];
   mess:boolean;
   topshow:boolean;
+  phone:any;
 
   @ViewChild(Slides) slides:Slides;
   @ViewChild(Content) content:Content;
@@ -63,14 +65,14 @@ export class PrdetailPage {
       })
   }
   //隐藏tabs
-  ionViewWillLeave() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-      Object.keys(elements).map((key) => {
-        elements[key].style.display = 'flex';
-      });
-    }
-  }
+  // ionViewWillLeave() {
+  //   let elements = document.querySelectorAll(".tabbar");
+  //   if (elements != null) {
+  //     Object.keys(elements).map((key) => {
+  //       elements[key].style.display = 'flex';
+  //     });
+  //   }
+  // }
   //轮播
   goToSlide(){
     this.slides.slideTo(2,500);
@@ -170,6 +172,26 @@ export class PrdetailPage {
     actionSheet.present();
   }
 
+  //立即购买
+  buy(detail){
+    this.phone = localStorage.getItem('userphone');
+    console.log(detail);
+    this.http.post('http://localhost:3000/cake',
+      {
+        cakeid:detail.cakeid,
+        number:detail.number,
+        phone:this.phone,
+        size:this.sizestr
+      })
+      .toPromise()
+      .then(res=>{
+        if(res.json().success){
+          this.navCtrl.push(BuyPage);
+        }
+      });
+
+  }
+
   //回到顶部
   scrollTo(){
     this.content.scrollTo(0,0,200);
@@ -183,7 +205,6 @@ export class PrdetailPage {
       }
     });
   }
-
   //微信
   weixin(){
     this.mess = true;

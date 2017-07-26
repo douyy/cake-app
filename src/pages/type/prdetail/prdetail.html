@@ -87,7 +87,7 @@
     </ion-row>
     <ion-row>
       <ion-col><button (click)="join(detail)">加入购物车</button></ion-col>
-      <ion-col><button class="now">立即购买</button></ion-col>
+      <ion-col><button class="now" (click)="buy(detail)">立即购买</button></ion-col>
     </ion-row>
   </ion-grid>
   <div class="call">
@@ -262,7 +262,7 @@
             <p>电话咨询</p>
           </li>
           <li><button>加入购物车</button></li>
-          <li><button>立即购买</button></li>
+          <li><button (click)="buy()">立即购买</button></li>
         </ul>
   </ion-footer>
   <div class="image">

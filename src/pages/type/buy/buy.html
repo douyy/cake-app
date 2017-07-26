@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      填写订单
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="order">
+  <div class="product" *ngFor="let c of cart">
+    <img src="{{c.url}}" alt="">
+    <div class="wz">
+      <p>名称：{{c.name}}</p>
+      <p>附加：{{c.size}}</p>
+      <p>
+        <span (click)="abstract(c)">-</span>
+        <span>{{c.number}}</span>
+        <span (click)="add(c.number,$event)">+</span>
+      </p>
+    </div>
+    <div class="right">
+      <p>{{c.price}}元</p>
+      <ion-icon name="trash" class="trach"></ion-icon>
+    </div>
+    <div class="xian"></div>
+    <div class="total">
+      共1件商品，<span class="yuan">{{c.price}}</span>元
+    </div>
+  </div>
+  <div class="date">
+      <ion-item>
+        <ion-label>请添加配送日期：</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD/A" placeholder="请填写配送的时间" doneText="上午 下午" ></ion-datetime>
+      </ion-item>
+  </div>
+  <div class="gou">
+    <p><ion-icon name="person" class="person"></ion-icon>订购人信息</p>
+    <p>
+      <span>增加订购人信息：<input type="text" #dtime></span>
+    </p>
+  </div>
+  <div class="gou">
+    <p class="m"><ion-icon name="person" class="person" ></ion-icon>收货人信息</p>
+    <p>
+      <span>增加收货人信息：<input type="text" #mess></span>
+    </p>
+  </div>
+  <div class="gou heka">
+    <p><ion-icon name="chatboxes" class="person"></ion-icon>贺卡等信息</p>
+    <p>
+      <span>贺卡留言（填写留言及署名）：<input type="text" #liuyan></span>
+    </p>
+  </div>
+  <div class="gou juan">
+    <p><input type="checkbox">我有优惠券</p>
+    <p><input type="checkbox">我有微信券</p>
+    <div class="submit" (click)="presentToast(dtime.value,mess.value,liuyan.value)">提交订单</div>
+  </div>
+
+  <ion-footer>
+    <ul class="bottom">
+      <li>
+        <img src="../../assets/images/pro_bottom_zixun.png" alt="">
+        <p>客服</p>
+      </li>
+      <li>
+        <p>合计：<span></span>元</p>
+      </li>
+      <li><button>电话咨询</button></li>
+      <li><button (click)="buy()">立即购买</button></li>
+    </ul>
+  </ion-footer>
+</ion-content>
