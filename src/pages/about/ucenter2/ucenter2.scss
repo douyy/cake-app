@@ -35,36 +35,3 @@ page-ucenter2 {
   font-size: 2rem;
   margin-top:1rem;
 }
-.image{
-  position: fixed;
-  bottom:80px;
-  right:20px;
-}
-.image img{
-  width:40px;
-  height:40px;
-}
-.message{
-  width:450px;
-  height:190px;
-  background-color: #ddd;
-  border-radius:2px;
-  padding-top:15px;
-  text-align:center;
-  opacity:0.9;
-}
-.message p{
-  line-height:30px;
-}
-.message p span{
-  color:#f00;
-}
-.message .close{
-  width:380px;
-  height:40px;
-  background-color: #FF6666;
-  color:#fff;
-  line-height: 40px;
-  margin-left:35px;
-  border-radius:5px;
-}

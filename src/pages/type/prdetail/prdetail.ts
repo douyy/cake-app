@@ -104,25 +104,25 @@ export class PrdetailPage {
   sizechoose(size){
     switch(size){
       case '1':
-        this.sizestr = '八英寸(20CM,2-3人食用)';
+        this.sizestr = '八英寸';
         break;
       case '2':
-        this.sizestr = '十英寸(25CM,4-6人食用)';
+        this.sizestr = '十英寸';
         break;
       case '3':
-        this.sizestr = '十二英寸(30CM,6-9人食用)';
+        this.sizestr = '十二英寸';
         break;
       case '4':
-        this.sizestr = '十四英寸(35CM,9-12人食用)';
+        this.sizestr = '十四英寸';
         break;
       case '5':
-        this.sizestr = '十六英寸(40CM,12-15人食用)';
+        this.sizestr = '十六英寸';
         break;
       case '6':
-        this.sizestr = '十八英寸(45CM,15-18人食用)';
+        this.sizestr = '十八英寸';
         break;
       case '7':
-        this.sizestr = '二十英寸(50CM,中型聚餐)';
+        this.sizestr = '二十英寸';
         break;
     }
     this.sizenow = size;
@@ -135,11 +135,10 @@ export class PrdetailPage {
   size:any;
   join(c){
     this.phone =  localStorage.getItem('userphone');
-    this.size = localStorage.setItem('size',this.sizestr);
     if(this.phone == ''){
       this.navCtrl.push(LongingPage);
     }else{
-      this.http.post('http://localhost:3000/cake',{cakeid:c,phone:this.phone}).toPromise()
+      this.http.post('http://localhost:3000/cake/go',{cakeid:c.cakeid,phone:this.phone}).toPromise()
         .then(res=>{
           var data = res.json();
           if(data.success){

@@ -121,7 +121,7 @@ export class HomePage {
     if(this.phone == ''){
      this.navCtrl.push(LongingPage);
      }else{
-        this.http.post('http://localhost:3000/cake',{cakeid:c,phone:this.phone}).toPromise()
+        this.http.post('http://localhost:3000/cake/go',{cakeid:c,phone:this.phone}).toPromise()
           .then(res=>{
             var data = res.json();
             if(data.success){

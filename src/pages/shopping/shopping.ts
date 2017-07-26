@@ -96,7 +96,7 @@ export class ShoppingPage{
   }
   //
   //  数量增加
-    add(cakeid:number,num:number,price:string){
+    add(cakeid:number,num:number){
       num++;
       this.channum.numchange(cakeid,num).then((res)=>{
           if(res.success){
@@ -105,7 +105,7 @@ export class ShoppingPage{
       })
     }
   //  数量减少
-    subtract(cakeid:number,num:number,price:string){
+    subtract(cakeid:number,num:number){
       if(num == 1){
         num = 1;
       }else{

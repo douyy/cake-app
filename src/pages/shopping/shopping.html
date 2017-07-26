@@ -33,12 +33,11 @@
       <li class="word">
         <div class="name">名称：{{c.name}}</div>
         <div class="num">数量：
-          <span class="n" (click)="subtract(c.cakeid,c.num,c.price)">-</span>
+          <span class="n" (click)="subtract(c.cakeid,c.num)">-</span>
           <span class="shu">{{c.num}}</span>
-          <span class="n" (click)="add(c.cakeid,c.num,c.price)">+</span>
+          <span class="n" (click)="add(c.cakeid,c.num)">+</span>
         </div>
-        <div class="append" *ngIf="size == null">附加：八英寸</div>
-        <div class="append" *ngIf="size != null">附加：{{size}}</div>
+        <div class="append">附加：八英寸</div>
         <div class="price">价格：<span>{{c.price}}元</span></div>
       </li>
       <li class="but">

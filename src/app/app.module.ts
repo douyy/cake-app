@@ -37,8 +37,6 @@ import {Ucenter13Page} from "../pages/about/ucenter13/ucenter13";
 import {Ucenter14Page} from "../pages/about/ucenter14/ucenter14";
 import {Ucenter15Page} from "../pages/about/ucenter15/ucenter15";
 import {Ucenter16Page} from "../pages/about/ucenter16/ucenter16";
-import {Calendar} from "@ionic-native/calendar";
-import {FormsModule} from "@angular/forms";
 import {ShoppingnumProvider} from "../providers/shoppingnum/shoppingnum";
 
 
@@ -79,7 +77,7 @@ import {ShoppingnumProvider} from "../providers/shoppingnum/shoppingnum";
     BuyPage,
   ],
   imports: [
-    BrowserModule,HttpModule,FormsModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -123,7 +121,6 @@ import {ShoppingnumProvider} from "../providers/shoppingnum/shoppingnum";
     SplashScreen,
     ShoppingnumProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Calendar
   ]
 })
 export class AppModule {}
