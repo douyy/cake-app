@@ -12,10 +12,10 @@
     <div class="wz">
       <p>名称：{{c.name}}</p>
       <p>附加：{{c.size}}</p>
-      <p>
-        <span (click)="abstract(c)">-</span>
-        <span>{{c.number}}</span>
-        <span (click)="add(c.number,$event)">+</span>
+      <p class="shu">
+        <span (click)="abstract()" class="s">-</span>
+        <span class="s">{{number}}</span>
+        <span (click)="add()" class="s">+</span>
       </p>
     </div>
     <div class="right">
@@ -24,7 +24,7 @@
     </div>
     <div class="xian"></div>
     <div class="total">
-      共1件商品，<span class="yuan">{{c.price}}</span>元
+      共1件商品，<span class="yuan">{{c.price*number}}</span>元
     </div>
   </div>
   <div class="date">
@@ -63,11 +63,11 @@
         <img src="../../assets/images/pro_bottom_zixun.png" alt="">
         <p>客服</p>
       </li>
-      <li>
+      <li class="heji">
         <p>合计：<span></span>元</p>
       </li>
-      <li><button>电话咨询</button></li>
-      <li><button (click)="buy()">立即购买</button></li>
+      <li class="zixun"><button>电话咨询</button></li>
+      <li class="buy"><button (click)="buy()">立即购买</button></li>
     </ul>
   </ion-footer>
 </ion-content>

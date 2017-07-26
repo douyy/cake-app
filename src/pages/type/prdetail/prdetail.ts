@@ -188,12 +188,11 @@ export class PrdetailPage {
   buy(detail){
     this.phone = localStorage.getItem('userphone');
     console.log(detail);
-    this.http.post('http://localhost:3000/cake',
+    this.http.post('http://localhost:3000/cake/dingdan',
       {
         cakeid:detail.cakeid,
         number:detail.number,
         phone:this.phone,
-        size:this.sizestr
       })
       .toPromise()
       .then(res=>{

@@ -11,6 +11,7 @@ import { MycakePage } from '../pages/mycake/mycake';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {ProductPage} from "../pages/type/product/product";
+import {BuyPage} from "../pages/type/buy/buy";
 import {LinkmanPage} from "../pages/mycake/longing/linkman/linkman";
 import {FindPage} from "../pages/mycake/find/find";
 import {AdressPage} from "../pages/mycake/longing/adress/adress";
@@ -36,7 +37,10 @@ import {Ucenter13Page} from "../pages/about/ucenter13/ucenter13";
 import {Ucenter14Page} from "../pages/about/ucenter14/ucenter14";
 import {Ucenter15Page} from "../pages/about/ucenter15/ucenter15";
 import {Ucenter16Page} from "../pages/about/ucenter16/ucenter16";
-import { ShoppingnumProvider } from '../providers/shoppingnum/shoppingnum';
+import {Calendar} from "@ionic-native/calendar";
+import {FormsModule} from "@angular/forms";
+import {ShoppingnumProvider} from "../providers/shoppingnum/shoppingnum";
+
 
 @NgModule({
   declarations: [
@@ -72,10 +76,11 @@ import { ShoppingnumProvider } from '../providers/shoppingnum/shoppingnum';
     Ucenter14Page,
     Ucenter15Page,
     Ucenter16Page,
+    BuyPage,
   ],
   imports: [
-    BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp)
+    BrowserModule,HttpModule,FormsModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -111,12 +116,14 @@ import { ShoppingnumProvider } from '../providers/shoppingnum/shoppingnum';
     Ucenter14Page,
     Ucenter15Page,
     Ucenter16Page,
+    BuyPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    ShoppingnumProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ShoppingnumProvider
+    Calendar
   ]
 })
 export class AppModule {}

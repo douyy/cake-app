@@ -26,7 +26,7 @@ page-contact {
     line-height:23px;
     font-size:14px;
   }
-  .product .wz p.shu span{
+  .product .wz p.shu span.s{
     width:30px;
     height:24px;
     border:1px solid #ccc;
@@ -162,13 +162,13 @@ page-contact {
     border-top:1px solid #dddddd;
     border-right:1px solid #dddddd;
   }
-  ion-footer .bottom li:nth-child(2){
+  ion-footer .bottom li.heji{
     border-top:1px solid #dddddd;
     width:32%;
     line-height:51px;
     font-size:14px;
   }
-  ion-footer .bottom li:nth-child(3),ion-footer .bottom li:nth-child(4){
+  ion-footer .bottom li.zixun,ion-footer .bottom li.buy{
     width:26%;
     height:100%;
   }
@@ -178,7 +178,7 @@ page-contact {
     color: #fff;
     font-size:16px;
   }
-  ion-footer .bottom li:nth-child(3) button{
+  ion-footer .bottom li.zixun button{
     background-color: #f15352;
   }
   ion-footer .bottom li img{

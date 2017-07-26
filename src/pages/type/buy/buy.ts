@@ -13,7 +13,9 @@ export class BuyPage {
   constructor(public navCtrl: NavController,
               public http: Http,
               public toastCtrl: ToastController) {
-    http.get('http://localhost:3000/cake/cart').toPromise()
+    this.number = 1;
+
+    http.get('http://localhost:3000/cake/cartding').toPromise()
       .then(res => {
         var data = res.json().data;
         console.log(data);
@@ -37,11 +39,15 @@ export class BuyPage {
         elements[key].style.display = 'flex';
       });
     }
-  }
-
-//  数量增加
-  add(number:any,e:any){
-
+    console.log(this.cart[0]['cakeid']);
+    this.http.delete('http://localhost:3000/cake',{params:{cakeid:this.cart[0]['cakeid'],phone:this.cart[0]['phone']}})
+      .toPromise()
+      .then(res =>{
+        var data = res.json();
+        if(data.success){
+          alert('取消订单');
+        }
+      });
   }
 
   presentToast(dtime,mess,liuyan) {
@@ -55,5 +61,15 @@ export class BuyPage {
     toast.present();
   }
 
-
+//增加
+  add(){
+    this.number++;
+  }
+  //减少
+  abstract(){
+    this.number--;
+    if(this.number <= 1){
+      this.number = 1;
+    }
+  }
 }
