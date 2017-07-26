@@ -107,7 +107,9 @@ export class HomePage {
   many(){
     this.navCtrl.push(TypePage);
   }
-
+  listgo(){
+    this.navCtrl.push(ProductPage,{type:'蛋糕'});
+  }
   goProduct(type){
     this.navCtrl.push(ProductPage,{type:type});
   }

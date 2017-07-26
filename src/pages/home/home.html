@@ -10,7 +10,7 @@
     <!--搜索栏-->
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list *ngIf="itemseach.length > 0">
-      <ion-item *ngFor="let item of itemseach">
+      <ion-item *ngFor="let item of itemseach" (click)="listgo()">
         {{ item }}
       </ion-item>
     </ion-list>
